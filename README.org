@@ -1,0 +1,23 @@
+#+title: Libft
+
+* Evaluations
+- tests are encouraged but won't be graded
+- tests are useful during defense and also evaluating peers
+- only the work in the git repository will be graded
+
+* Makefile
+- [ ] $(NAME), all, clean, fclean, re
+- [ ] include Rule *bonus* into Makefile (seperate *_bonus.{c/h*} files)
+
+* Mandatory part
+|--------------------+----------------------------------------------------------------------------------------------|
+| *Program name*       | libft.a                                                                                      |
+|--------------------+----------------------------------------------------------------------------------------------|
+| Turn in files      | Makefile, libft.h, ft_*.c                                                                    |
+|--------------------+----------------------------------------------------------------------------------------------|
+| Makefile           | _NAME_, all, clean, fclean, re                                                                 |
+|--------------------+----------------------------------------------------------------------------------------------|
+| External Functions | Detailed below                                                                               |
+|--------------------+----------------------------------------------------------------------------------------------|
+| Description        | Write your own library: a collection of functions that will be a useful tool for your cursus |
+|--------------------+----------------------------------------------------------------------------------------------|
