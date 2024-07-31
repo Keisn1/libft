@@ -6,6 +6,7 @@
 - only the work in the git repository will be graded
 
 * Makefile
+- [ ] Flags: -Wall, -Wextra, -Werror
 - [ ] $(NAME), all, clean, fclean, re
 - [ ] include Rule *bonus* into Makefile (seperate *_bonus.{c/h*} files)
 
@@ -31,24 +32,31 @@
 - ~libft.a~ is to be created at the root of the repository
 
 * TODO Part 1
+:LOGBOOK:
+CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
+:END:
 ** TODO no external functions
-- [ ] isalpha
-- [ ] isdigit
-- [ ] toupper
-- [ ] tolower
-- [ ] isalnum
-- [ ] isascii• strchr
-- [ ] isprint• strrchr
-- [ ] strlen
-- [ ] strncmp
-- [ ] memset
-- [ ] bzero• memchr
-- [ ] memcpy• memcmp
+- [X] isalpha
+- [X] isdigit
+- [X] isalnum
+- [X] isascii
+- [X] isprint
+- [X] toupper
+- [X] tolower
+- [X] strlen
+- [X] strlcpy
+- [X] strlcat
+- [X] strncmp
+- [X] strnstr
+- [X] strchr
+- [X] strrchr
+- [X] atoi
+- [X] bzero
+- [X] memset
+- [X] memchr
+- [X] memcpy
+- [X] memcmp
 - [ ] memmove
-- [ ] strnstr
-- [ ] strlcpy
-- [ ] strlcat
-- [ ] atoi
 ** TODO with malloc
 - [ ] calloc
 - [ ] strdup
