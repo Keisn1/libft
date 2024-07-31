@@ -31,11 +31,11 @@
 - use =ar= to create your library (=libtool= command is forbidden)
 - ~libft.a~ is to be created at the root of the repository
 
-* TODO Part 1
+* DONE Part 1
 :LOGBOOK:
 CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
 :END:
-** TODO no external functions
+** DONE no external functions
 - [X] isalpha
 - [X] isdigit
 - [X] isalnum
@@ -56,24 +56,26 @@ CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
 - [X] memchr
 - [X] memcpy
 - [X] memcmp
-- [ ] memmove
-** TODO with malloc
-- [ ] calloc
-- [ ] strdup
+- [X] memmove
+** DONE with malloc
+- [X] calloc
+- [X] strdup
 
 * TODO Part 2
-** TODO ft_substr
-** TODO ft_strjoin
-** TODO ft_strtrim
-** TODO ft_split
+** DONE ft_substr
+** DONE ft_strjoin
+** DONE ft_split
+:LOGBOOK:
+CLOCK: [2024-07-31 Wed 19:11]--[2024-07-31 Wed 19:34] =>  0:23
+:END:
+** DONE ft_strtrim
+** DONE ft_putchar_fd
+** DONE ft_putstr_fd
+** DONE ft_putendl_fd
+** DONE ft_putnbr_fd
 ** TODO ft_itoa
 ** TODO ft_strmapi
 ** TODO ft_striteri
-** TODO ft_putchar_fd
-** TODO ft_putstr_fd
-** TODO ft_putendl_fd
-** TODO ft_putnbr_fd
-
 * TODO Bonus Part
 #+begin_src c
 typedef struct s_list
