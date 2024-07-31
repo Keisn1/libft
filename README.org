@@ -21,3 +21,66 @@
 |--------------------+----------------------------------------------------------------------------------------------|
 | Description        | Write your own library: a collection of functions that will be a useful tool for your cursus |
 |--------------------+----------------------------------------------------------------------------------------------|
+
+* Technical considerations
+- no global variables
+- define helper functions as *static*: limits scope to appropriate file
+- all files at the root of your repository
+- *-Wall -Wextra -Wall*
+- use =ar= to create your library (=libtool= command is forbidden)
+- ~libft.a~ is to be created at the root of the repository
+
+* TODO Part 1
+** TODO no external functions
+- [ ] isalpha
+- [ ] isdigit
+- [ ] toupper
+- [ ] tolower
+- [ ] isalnum
+- [ ] isascii• strchr
+- [ ] isprint• strrchr
+- [ ] strlen
+- [ ] strncmp
+- [ ] memset
+- [ ] bzero• memchr
+- [ ] memcpy• memcmp
+- [ ] memmove
+- [ ] strnstr
+- [ ] strlcpy
+- [ ] strlcat
+- [ ] atoi
+** TODO with malloc
+- [ ] calloc
+- [ ] strdup
+
+* TODO Part 2
+** TODO ft_substr
+** TODO ft_strjoin
+** TODO ft_strtrim
+** TODO ft_split
+** TODO ft_itoa
+** TODO ft_strmapi
+** TODO ft_striteri
+** TODO ft_putchar_fd
+** TODO ft_putstr_fd
+** TODO ft_putendl_fd
+** TODO ft_putnbr_fd
+
+* TODO Bonus Part
+#+begin_src c
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list;
+#+end_src
+
+** TODO ft_lstnew
+** TODO ft_lstadd_front
+** TODO ft_lstsize
+** TODO ft_lstlast
+** TODO ft_lstadd_back
+** TODO ft_lstdelone
+** TODO ft_lstclear
+** TODO ft_lstiter
+** TODO ft_lstmap
