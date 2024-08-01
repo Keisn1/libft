@@ -8,7 +8,9 @@
 CC := cc
 CXX := g++
 CFLAGS := -Wall -Wextra -Werror
+CFLAGS += -Iincludes
 CXXFLAGS := -Wall -Wextra -std=c++14
+CXXFLAGS += -Iincludes
 LDFLAGS := -lgtest -lgtest_main -pthread
 
 #Directories and extensions
@@ -42,7 +44,7 @@ $(NAME): $(OBJ_FILES)
 
 # Compile C source files to object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I includes
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Build the tests executable
 $(TEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
@@ -52,18 +54,25 @@ $(TEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
 # Compile C++ test files to object files
 $(OBJ_DIR)/%.o: $(TESTS_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@ -I includes
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+############ PHONY ##################
 clean:
-	rm -f $(OBJ_FILES)
+	rm -f $(OBJ_FILES) $(TEST_OBJ_FILES)
 
 fclean: clean
 	rm -f $(BIN_DIR)/*
 
 re: fclean all
 
+bear: $(OBJ_FILES) $(TEST_OBJ_FILES)
+
+test: $(TEST_TARGET)
+	- $(TEST_TARGET)
+
+############ PRINTING ##################
 #Phony targets
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bear
 
 #Printing
 print_srcs:

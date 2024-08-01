@@ -51,7 +51,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
 
 char	*ft_get_empty_str(void);
-
 #ifdef __cplusplus
 }
 #endif
