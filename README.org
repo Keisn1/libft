@@ -69,13 +69,13 @@ CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
 CLOCK: [2024-07-31 Wed 19:11]--[2024-07-31 Wed 19:34] =>  0:23
 :END:
 ** DONE ft_strtrim
+** TODO ft_strmapi
+** TODO ft_striteri
 ** DONE ft_putchar_fd
 ** DONE ft_putstr_fd
 ** DONE ft_putendl_fd
 ** DONE ft_putnbr_fd
 ** TODO ft_itoa
-** TODO ft_strmapi
-** TODO ft_striteri
 * TODO Bonus Part
 #+begin_src c
 typedef struct s_list
