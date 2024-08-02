@@ -18,8 +18,3 @@ TEST(FtAtoiTest, HandlesWhiteSpaces) {
     EXPECT_EQ(ft_atoi(" \t \r \n \v \f  42"), atoi(" \t \r \n \v \f  42"));
     EXPECT_EQ(ft_atoi(" \t \r \n \v \f  -42"), atoi(" \t \r \n \v \f  -42"));
 }
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

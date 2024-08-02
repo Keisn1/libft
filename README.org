@@ -45,11 +45,11 @@ CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
 - [X] tolower
 - [X] strlen
 - [X] strlcpy
-- [ ] strlcat
-- [ ] strncmp
-- [ ] strnstr
-- [ ] strchr
-- [ ] strrchr
+- [X] strlcat
+- [X] strncmp
+- [X] strnstr
+- [X] strchr
+- [X] strrchr
 - [X] atoi
 - [ ] bzero
 - [ ] memset
