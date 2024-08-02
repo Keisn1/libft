@@ -24,11 +24,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void			*ptr;
 
 	if (!nmemb || !size)
-	{
-		ptr = malloc(1 * sizeof(unsigned char));
-		((unsigned char *)ptr)[0] = '\0';
-		return (ptr);
-	}
+		return ft_get_empty_str();
 	if (int_overflow(nmemb, size))
 		return (NULL);
 	ptr = malloc(size * nmemb);

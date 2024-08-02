@@ -65,10 +65,11 @@ fclean: clean
 
 re: fclean all
 
-bear: $(OBJ_FILES) $(TEST_OBJ_FILES)
-
 test: $(TEST_TARGET)
 	- $(TEST_TARGET)
+
+bear: $(OBJ_FILES) $(TEST_OBJ_FILES)
+
 
 ############ PRINTING ##################
 #Phony targets

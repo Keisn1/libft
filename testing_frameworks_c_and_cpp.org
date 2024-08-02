@@ -1,8 +1,8 @@
 :PROPERTIES:
 :GPTEL_MODEL: gpt-4o
 :GPTEL_BACKEND: ChatGPT
-:GPTEL_SYSTEM: \n     You are a helpful assistant, occasionally dwelling within Emacs, believe it or not.\n     A convivial sort with an easy-going natural manner.\n     Wrap any generated code in gfm code blocks - this applies only to code, not to general responses.  For example\n     ```emacs-lisp\n     (message "this is a test")\n     ```\n
-:GPTEL_BOUNDS: ((1787 . 4298) (4418 . 7514) (7713 . 9627) (9664 . 11391) (11392 . 11902) (11952 . 13910) (13963 . 16431) (16481 . 16558) (16606 . 16634) (16671 . 16707) (16710 . 19367) (19525 . 21272) (21273 . 22488) (22529 . 23957) (23962 . 24177) (24182 . 25299) (25317 . 25325) (25331 . 26822) (26859 . 26899) (26901 . 27777))
+:GPTEL_SYSTEM: You are a large language model living in Emacs and a helpful assistant. Try to avoid long answers.
+:GPTEL_BOUNDS: ((1475 . 4022) (4106 . 7238) (7401 . 9351) (9352 . 11626) (11640 . 13634) (13651 . 16322) (16359 . 16395) (16398 . 19124) (19213 . 26586) (26588 . 27533) (29471 . 31211) (31339 . 35261) (35406 . 38396) (38444 . 38859) (38861 . 42648))
 :END:
 ** List of frameworks
 *** Criterion (2k stars) (last release: 2.4.2 May 13 - 2023)
@@ -31,7 +31,7 @@ https://sourceforge.net/projects/cunit/
 *** CuTest (last update: 2018)
 https://cutest.sourceforge.net/
 - highly portable
-** Chat
+** Chat on testing frameworks and Makefiles
 *** which testing frameworks for C and C++ do you know?
 
 There are several popular testing frameworks for C and C++ that you might find useful. Here are a few:
@@ -448,6 +448,7 @@ While /Criterion/ can handle C++ code, you might find that frameworks specially 
 *Recommendation*: If your codebase is predominantly C++, consider shifting to a C++-specific testing framework. If your project is primarily in C with occasional C++ integration, /Criterion/ is a perfectly valid choice and can handle the C++ parts well.
 
 ***
+** Chat on how to use googleTest
 *** May i use GoogleTest for testing C code?
 
 
@@ -738,7 +739,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 # Compile C++ test files to object files
 $(OBJ_DIR)/%.o: $(TESTS_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@ 
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Clean up build files
 clean:
@@ -961,5 +962,517 @@ This line in the Makefile uses the =wildcard= function to generate a list of all
 - =SRC_FILES :==: The =:== operator is used to assign the result of the =wildcard= function to the =SRC_FILES= variable. This means =SRC_FILES= will hold a space-separated list of all =.c= files found in the =SRC_DIR= directory.
 
 This enables the Makefile to dynamically include all C source files in the specified directory when building the project.
+
+***
+*** May i have table tests in googleTest
+**** Implementing Table Tests with GoogleTest
+
+1. /Define a Struct for Test Parameters/: This struct will hold the input parameters and the expected output for each test case.
+
+2. /Create a Fixture for Parameterized Tests/: This is a test class that inherits from ::testing::TestWithParam.
+
+3. /Use the TEST_P Macro/: Define the parameterized test logic using the TEST_P macro.
+
+4. /INSTANTIATE_TEST_SUITE_P Macro/: Instantiate the test suite with the test cases, providing the test data.
+
+Here’s an example to illustrate table tests with GoogleTest:
+
+/src/my_code.c/:
+#+begin_src c
+#include "my_code.h"
+
+int add(int a, int b) {
+    return a + b;
+}
+#+end_src
+
+/src/my_code.h/:
+#+begin_src c
+#ifndef MY_CODE_H
+#define MY_CODE_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+int add(int a, int b);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // MY_CODE_H
+#+end_src
+
+/tests/test_my_code.cpp/:
+#+begin_src cpp
+#include <gtest/gtest.h>
+#include "my_code.h"
+
+// Define a struct to hold the test parameters
+struct AdditionTestParam {
+    int a;
+    int b;
+    int expected;
+};
+
+// Define a fixture class for parameterized tests
+class AdditionTest : public ::testing::TestWithParam<AdditionTestParam> {
+};
+
+// Define the parameterized test
+TEST_P(AdditionTest, HandlesVariousInputs) {
+    AdditionTestParam param = GetParam();
+    EXPECT_EQ(add(param.a, param.b), param.expected);
+}
+
+// Instantiate the test suite with test cases
+INSTANTIATE_TEST_SUITE_P(
+    AdditionTests,                  // Test suite name
+    AdditionTest,                   // Test case name
+    ::testing::Values(              // Test data
+        AdditionTestParam{1, 2, 3},
+        AdditionTestParam{2, 3, 5},
+        AdditionTestParam{-1, -1, -2},
+        AdditionTestParam{10, 15, 25}
+    )
+);
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+#+end_src
+
+**** Explanation:
+
+1. *Define a Struct for Test Parameters*:
+    #+begin_src cpp
+    struct AdditionTestParam {
+        int a;
+        int b;
+        int expected;
+    };
+    #+end_src
+    This struct holds the input parameters (=a= and =b=) and the expected output (=expected=) for the test cases.
+
+2. *Create a Fixture for Parameterized Tests*:
+    #+begin_src cpp
+    class AdditionTest : public ::testing::TestWithParam<AdditionTestParam> {
+    };
+    #+end_src
+    This class inherits from =::testing::TestWithParam= and uses =AdditionTestParam= as the parameter type.
+
+3. *Use the =TEST_P= Macro*:
+    #+begin_src cpp
+    TEST_P(AdditionTest, HandlesVariousInputs) {
+        AdditionTestParam param = GetParam();
+        EXPECT_EQ(add(param.a, param.b), param.expected);
+    }
+    #+end_src
+    The =TEST_P= macro defines the parameterized test. The =GetParam= function retrieves the current test parameters.
+
+4. *Instantiate the Test Suite*:
+    #+begin_src cpp
+    INSTANTIATE_TEST_SUITE_P(
+        AdditionTests,
+        AdditionTest,
+        ::testing::Values(
+            AdditionTestParam{1, 2, 3},
+            AdditionTestParam{2, 3, 5},
+            AdditionTestParam{-1, -1, -2},
+            AdditionTestParam{10, 15, 25}
+        )
+    );
+    #+end_src
+    The =INSTANTIATE_TEST_SUITE_P= macro instantiates the test suite with the specified test cases. Each =AdditionTestParam= instance represents a different test case.
+
+Now, when you compile and run the tests, =GoogleTest= will execute the =HandlesVariousInputs= test with each set of parameters, checking that the =add= function produces the expected results for each case.
+
+This approach allows you to neatly organize multiple test cases and easily expand or modify the test data as needed.
+*** I have a function ft_strlcpy, that imitates the behavior of strlcpy. I would like to test it with gtest. How can I do it?
+
+To test your =ft_strlcpy= function using GoogleTest, you can follow a similar approach to the one described in the previous example. Here, we'll define parameterized tests to check various cases for your =ft_strlcpy= function.
+
+1. *Define your =ft_strlcpy= function in C*:
+
+   *src/ft_strlcpy.c*:
+   #+begin_src c
+   #include "ft_strlcpy.h"
+
+   size_t ft_strlcpy(char *dst, const char *src, size_t dstsize) {
+       size_t src_len = 0;
+
+       while (src[src_len] != '\0') {
+           if (src_len < dstsize - 1) {
+               dst[src_len] = src[src_len];
+           }
+           src_len++;
+       }
+
+       if (dstsize > 0) {
+           dst[dstsize - 1] = '\0';
+       }
+
+       return src_len;
+   }
+   #+end_src
+
+2. *Create a header for the =ft_strlcpy= function*:
+
+   *src/ft_strlcpy.h*:
+   #+begin_src c
+   #ifndef FT_STRLCPY_H
+   #define FT_STRLCPY_H
+
+   #include <stddef.h>
+
+   size_t ft_strlcpy(char *dst, const char *src, size_t dstsize);
+
+   #endif // FT_STRLCPY_H
+   #+end_src
+
+3. *Create the GoogleTest test file*:
+
+   *tests/test_ft_strlcpy.cpp*:
+   #+begin_src cpp
+   #include <gtest/gtest.h>
+   #include "ft_strlcpy.h"
+   #include <cstring> // For std::strlen
+
+   struct StrlcpyTestParam {
+       const char* src;
+       size_t dstsize;
+       const char* expected;
+       size_t expected_ret;
+   };
+
+   class StrlcpyTest : public ::testing::TestWithParam<StrlcpyTestParam> {
+   };
+
+   TEST_P(StrlcpyTest, HandlesVariousInputs) {
+       StrlcpyTestParam param = GetParam();
+       char buffer[100];
+       size_t ret = ft_strlcpy(buffer, param.src, param.dstsize);
+       EXPECT_EQ(ret, param.expected_ret);
+       if (param.dstsize > 0) {
+           EXPECT_STREQ(buffer, param.expected);
+       }
+   }
+
+   INSTANTIATE_TEST_SUITE_P(
+       StrlcpyTests,
+       StrlcpyTest,
+       ::testing::Values(
+           StrlcpyTestParam{"hello", 10, "hello", 5},
+           StrlcpyTestParam{"hello", 0, "", 5},
+           StrlcpyTestParam{"hello, world!", 5, "hell", 13},
+           StrlcpyTestParam{"", 10, "", 0},
+           StrlcpyTestParam{"abcd", 3, "ab", 4}
+       )
+   );
+
+   int main(int argc, char **argv) {
+       ::testing::InitGoogleTest(&argc, argv);
+       return RUN_ALL_TESTS();
+   }
+   #+end_src
+
+4. *Update your Makefile to include the new files*:
+
+   *Makefile*:
+   #+begin_src makefile
+   # Compiler and flags
+   CC := gcc
+   CXX := g++
+   CFLAGS := -Wall -Wextra -std=c99
+   CXXFLAGS := -Wall -Wextra -std=c++14
+   LDFLAGS := -lgtest -lgtest_main -pthread
+
+   # Directories
+   SRC_DIR := src
+   OBJ_DIR := obj
+   BIN_DIR := bin
+   TESTS_DIR := tests
+
+   # Source files and object files
+   SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
+   OBJ_FILES := $(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+   TEST_FILES := $(wildcard $(TESTS_DIR)/*.cpp)
+   TEST_OBJ_FILES := $(TEST_FILES:$(TESTS_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+
+   # Executable names
+   TARGET := $(BIN_DIR)/ft_strlcpy_app
+   TEST_TARGET := $(BIN_DIR)/run_ft_strlcpy_tests
+
+   .PHONY: all clean
+
+   all: $(TARGET) $(TEST_TARGET)
+
+   # Build the main application (if you have one)
+   $(TARGET): $(OBJ_FILES)
+       $(CC) -o $@ $^
+
+   # Build the tests executable
+   $(TEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
+       $(CXX) -o $@ $^ $(LDFLAGS)
+
+   # Compile C source files to object files
+   $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+       @mkdir -p $(OBJ_DIR)
+       $(CC) $(CFLAGS) -c $< -o $@
+
+   # Compile C++ test files to object files
+   $(OBJ_DIR)/%.o: $(TESTS_DIR)/%.cpp
+       @mkdir -p $(OBJ_DIR)
+       $(CXX) $(CXXFLAGS) -c $< -o $@
+
+   # Clean up build files
+   clean:
+       rm -rf $(OBJ_DIR)/*.o $(BIN_DIR)/*
+   #+end_src
+
+5. *Build and run your tests*:
+
+   Navigate to your project's root directory and run:
+   #+begin_src sh
+   make
+   ./bin/run_ft_strlcpy_tests
+   #+end_src
+
+This setup will compile your =ft_strlcpy= function and the GoogleTest tests, allowing you to verify the correctness of the implementation with various test cases.
+
+*** Can you explain the following syntax?
+#+begin_src cpp
+class StrlcpyTest : public ::testing::TestWithParam<StrlcpyTestParam> {};
+#+end_src
+
+
+Certainly! Let's break down the syntax:
+
+#+begin_src cpp
+class StrlcpyTest : public ::testing::TestWithParam<StrlcpyTestParam> {};
+#+end_src
+
+This line defines a new class named =StrlcpyTest=, which is derived from a GoogleTest-provided template class =::testing::TestWithParam=, parameterized with =StrlcpyTestParam=.
+
+Here's a detailed explanation:
+
+1. /class StrlcpyTest/:
+   - This declares a new class named =StrlcpyTest=.
+
+2. *: public ::testing::TestWithParam<StrlcpyTestParam>*:
+   - The colon =:= indicates that =StrlcpyTest= will inherit from another class.
+   - =public= specifies that the inheritance is public, meaning that all public and protected members of the base class (=::testing::TestWithParam=) remain public and protected, respectively, in the derived class (=StrlcpyTest=).
+   - =::testing::TestWithParam= is a GoogleTest template class provided for parameterized tests.
+   - =StrlcpyTestParam= is the type parameter for the template class. It specifies the type of parameter that will be passed to the test cases.
+
+3. ={}=:
+   - This is the class definition body. In this case, it’s empty, meaning the =StrlcpyTest= class does not add any additional members or functions beyond what it inherits from =::testing::TestWithParam=.
+
+4. The full expression:
+   - =class StrlcpyTest : public ::testing::TestWithParam<StrlcpyTestParam> {}=;
+   - This line declares the class =StrlcpyTest= to be a public subclass of the template class =::testing::TestWithParam= instantiated with the template parameter =StrlcpyTestParam=.
+
+*Purpose*:
+This class is used as a fixture for parameterized GoogleTest tests. By inheriting from =::testing::TestWithParam=, the =StrlcpyTest= class gains the ability to access the test parameters (defined as =StrlcpyTestParam=) using the =GetParam()= method provided by the base class. This allows any test defined using this fixture to access and use the parameters when running each instance of the test.
+
+*Example Usage*:
+Here's how you would use this fixture class in a parameterized test:
+
+#+begin_src cpp
+// Define the parameterized test
+TEST_P(StrlcpyTest, HandlesVariousInputs) {
+    StrlcpyTestParam param = GetParam(); // Get the test parameters
+    char buffer[100];
+    size_t ret = ft_strlcpy(buffer, param.src, param.dstsize);
+    EXPECT_EQ(ret, param.expected_ret);
+    if (param.dstsize > 0) {
+        EXPECT_STREQ(buffer, param.expected);
+    }
+}
+
+// Instantiate the test suite with test cases
+INSTANTIATE_TEST_SUITE_P(
+    StrlcpyTests,
+    StrlcpyTest,
+    ::testing::Values(
+        StrlcpyTestParam{"hello", 10, "hello", 5},
+        StrlcpyTestParam{"hello", 0, "", 5},
+        StrlcpyTestParam{"hello, world!", 5, "hell", 13},
+        StrlcpyTestParam{"", 10, "", 0},
+        StrlcpyTestParam{"abcd", 3, "ab", 4}
+    )
+);
+#+end_src
+
+In this example, the =HandlesVariousInputs= test is run multiple times, once for each set of parameters specified in the =INSTANTIATE_TEST_SUITE_P= macro, utilizing the =StrlcpyTest= fixture.
+*** I need to do the same thing for Strlcat.
+
+Sure! Let's set up a similar structure for the function =ft_strlcat=, mimicking the behavior of the =strlcat= function. You'll follow the same approach: define the function in C, create a parameterized test using GoogleTest, and organize everything in your project directory.
+
+Here's a step-by-step guide:
+
+1. /Define your =ft_strlcat= function in C/:
+
+   /src/ft_strlcat.c/:
+   #+begin_src c
+#include "ft_strlcat.h  "
+
+size_t ft_strlcat(char /dst, const char /src, size_t dstsize) {
+    size_t dst_len = 0;
+    size_t src_len = 0;
+
+    // Find length of dst and src
+    while (dst_len < dstsize && dst[dst_len] != '\0')
+        dst_len++;
+    while (src[src_len] != '\0')
+        src_len++;
+
+    if (dst_len == dstsize)
+        return dstsize + src_len;
+
+    for (size_t i = 0; i < src_len && (dst_len + i + 1) < dstsize; i++) {
+        dst[dst_len + i] = src[i];
+    }
+
+    if (dst_len + src_len < dstsize) {
+        dst[dst_len + src_len] = '\0';
+    } else {
+        dst[dstsize - 1] = '\0';
+    }
+
+    return dst_len + src_len;
+}
+   #+end_src
+
+2. /Create a header for the =ft_strlcat= function/:
+
+   /src/ft_strlcat.h/:
+   #+begin_src c
+#ifndef FT_STRLCAT_H
+#define FT_STRLCAT_H
+
+#include <stddef.h>
+
+size_t ft_strlcat(char /dst, const char /src, size_t dstsize);
+
+#endif // FT_STRLCAT_H
+   #+end_src
+
+3. /Create the GoogleTest test file/:
+
+   /tests/test_ft_strlcat.cpp/:
+   #+begin_src cpp
+#include <gtest/gtest.h>
+#include "ft_strlcat.h"
+#include <cstring> // For std::strlen
+
+struct StrlcatTestParam {
+    const char/ src;
+    const char/ initial_dst;
+    size_t dstsize;
+    const char/ expected;
+    size_t expected_ret;
+};
+
+class StrlcatTest : public ::testing::TestWithParam<StrlcatTestParam> {
+};
+
+TEST_P(StrlcatTest, HandlesVariousInputs) {
+    StrlcatTestParam param = GetParam();
+    char buffer[100];
+    std::strncpy(buffer, param.initial_dst, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0'; // Ensure null termination
+
+    size_t ret = ft_strlcat(buffer, param.src, param.dstsize);
+    EXPECT_EQ(ret, param.expected_ret);
+    if (param.dstsize > 0) {
+        EXPECT_STREQ(buffer, param.expected);
+    }
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    StrlcatTests,
+    StrlcatTest,
+    ::testing::Values(
+        StrlcatTestParam{"world", "hello", 11, "helloworld", 10},
+        StrlcatTestParam{"world", "hello", 8, "hellowo", 10},
+        StrlcatTestParam{"world", "hello", 0, "hello", 10},
+        StrlcatTestParam{"", "hello", 10, "hello", 5},
+        StrlcatTestParam{"!!!", "", 4, "!!!", 3}
+    )
+);
+
+int main(int argc, char *argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+   #+end_src
+
+4. /Update your Makefile to include the new files/:
+
+   /Makefile/:
+   #+begin_src makefile
+* Compiler and flags
+CC := gcc
+CXX := g++
+CFLAGS := -Wall -Wextra -std=c99
+CXXFLAGS := -Wall -Wextra -std=c++14
+LDFLAGS := -lgtest -lgtest_main -pthread
+
+* Directories
+SRC_DIR := src
+OBJ_DIR := obj
+BIN_DIR := bin
+TESTS_DIR := tests
+
+* Source files and object files
+SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
+OBJ_FILES := $(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+TEST_FILES := $(wildcard $(TESTS_DIR)/*.cpp)
+TEST_OBJ_FILES := $(TEST_FILES:$(TESTS_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+
+* Executable names
+TARGET := $(BIN_DIR)/ft_strlcat_app
+TEST_TARGET := $(BIN_DIR)/run_ft_strlcat_tests
+
+.PHONY: all clean
+
+all: $(TARGET) $(TEST_TARGET)
+
+* Build the main application (if you have one)
+$(TARGET): $(OBJ_FILES)
+	$(CC) -o $@ $^
+
+* Build the tests executable
+$(TEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
+	$(CXX) -o $@ $^ $(LDFLAGS)
+
+* Compile C source files to object files
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+* Compile C++ test files to object files
+$(OBJ_DIR)/%.o: $(TESTS_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+* Clean up build files
+clean:
+	rm -rf $(OBJ_DIR)/*.o $(BIN_DIR)//
+   #+end_src
+
+5. /Build and run your tests/:
+
+   Navigate to your project's root directory and run:
+
+   #+begin_src sh
+make
+./bin/run_ft_strlcat_tests
+   #+end_src
+
+This setup will compile your =ft_strlcat= function and the GoogleTest tests, allowing you to verify the correctness of the implementation with various test cases.
 
 ***

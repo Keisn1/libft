@@ -45,22 +45,21 @@ CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
 - [X] tolower
 - [X] strlen
 - [X] strlcpy
-- [X] strlcat
-- [X] strncmp
-- [X] strnstr
-- [X] strchr
-- [X] strrchr
+- [ ] strlcat
+- [ ] strncmp
+- [ ] strnstr
+- [ ] strchr
+- [ ] strrchr
 - [X] atoi
-- [X] bzero
-- [X] memset
-- [X] memchr
-- [X] memcpy
-- [X] memcmp
-- [X] memmove
+- [ ] bzero
+- [ ] memset
+- [ ] memchr
+- [ ] memcpy
+- [ ] memcmp
+- [ ] memmove
 ** DONE with malloc
-- [X] calloc
-- [X] strdup
-
+- [ ] calloc
+- [ ] strdup
 * TODO Part 2
 ** DONE ft_substr
 ** DONE ft_strjoin
