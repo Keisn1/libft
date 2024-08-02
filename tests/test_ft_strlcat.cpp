@@ -24,7 +24,6 @@ TEST_P(FtStrlcatTest, HandlesVariousInputs) {
 	}
 }
 
-
 INSTANTIATE_TEST_SUITE_P(
 	FtStrlcatTests,
 	FtStrlcatTest,

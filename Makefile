@@ -12,6 +12,7 @@ CFLAGS += -Iincludes
 CXXFLAGS := -Wall -Wextra -std=c++14
 CXXFLAGS += -Iincludes
 LDFLAGS := -lgtest -lgtest_main -pthread
+BSD := -lbsd
 
 #Directories and extensions
 SRC_DIR = ./src
@@ -49,7 +50,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 # Build the tests executable
 $(TEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
 	@mkdir -p $(BIN_DIR)
-	$(CXX) -o $@ $^ $(LDFLAGS)
+	$(CXX) -o $@ $^ $(LDFLAGS) $(BSD)
 
 # Compile C++ test files to object files
 $(OBJ_DIR)/%.o: $(TESTS_DIR)/%.cpp
