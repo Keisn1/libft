@@ -14,6 +14,11 @@ CXXFLAGS += -Iincludes
 LDFLAGS := -lgtest -lgtest_main -pthread
 BSD := -lbsd
 
+# Test Flags
+FSANITIZE = -fsanitize=address
+VALGRIND = valgrind
+VALGRIND_FLAGS = --leak-check=full
+
 #Directories and extensions
 SRC_DIR = ./src
 OBJ_DIR := ./obj
@@ -47,15 +52,18 @@ $(NAME): $(OBJ_FILES)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Build the tests executable
-$(TEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
-	@mkdir -p $(BIN_DIR)
-	$(CXX) -o $@ $^ $(LDFLAGS) $(BSD)
-
 # Compile C++ test files to object files
 $(OBJ_DIR)/%.o: $(TESTS_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Build the tests executable
+$(TEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
+	@mkdir -p $(BIN_DIR)
+	$(CXX) $(FSANITIZE) -o $@ $^ $(LDFLAGS) $(BSD)
+
+$(TEST_TARGET)-VALGRIND: $(OBJ_FILES) $(TEST_OBJ_FILES)
+	$(CXX) -o $(TEST_TARGET) $^ $(LDFLAGS) $(BSD)
 
 ############ PHONY ##################
 clean:
@@ -66,15 +74,17 @@ fclean: clean
 
 re: fclean all
 
-test: $(TEST_TARGET)
-	- $(TEST_TARGET)
-
 bear: $(OBJ_FILES) $(TEST_OBJ_FILES)
 
+test-fsanitize: $(OBJ_FILES) $(TEST_TARGET)
+	- $(TEST_TARGET)
+
+test-valgrind: $(OBJ_FILES) $(TEST_TARGET)-VALGRIND
+	$(VALGRIND) $(VALGRIND_FLAGS) $(TEST_TARGET)
 
 ############ PRINTING ##################
 #Phony targets
-.PHONY: all clean fclean re bear
+.PHONY: all clean fclean re bear test valgrind
 
 #Printing
 print_srcs:
@@ -89,4 +99,6 @@ print_test_files:
 print_test_objs:
 	@echo $(TEST_OBJ_FILES)
 
+print_test_target:
+	@echo $(TEST_TARGET)
 #end

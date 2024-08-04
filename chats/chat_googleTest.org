@@ -2,452 +2,10 @@
 :GPTEL_MODEL: gpt-4o
 :GPTEL_BACKEND: ChatGPT
 :GPTEL_SYSTEM: You are a large language model living in Emacs and a helpful assistant. Try to avoid long answers.
-:GPTEL_BOUNDS: ((1539 . 4086) (4170 . 7302) (7465 . 9415) (9416 . 11690) (11704 . 13698) (13715 . 16386) (16423 . 16459) (16462 . 19188) (19277 . 26650) (26652 . 27597) (29535 . 31275) (31403 . 35325) (35470 . 38460) (38507 . 38922) (38924 . 41151) (41192 . 44077) (44079 . 45526) (45603 . 46380) (46383 . 49286))
+:GPTEL_BOUNDS: ((562 . 3233) (3270 . 3306) (3309 . 6035) (6124 . 13497) (13499 . 14444) (16382 . 18122) (18250 . 22172) (22317 . 25307) (25354 . 25769) (25771 . 27998) (28039 . 30924) (30926 . 32373) (32450 . 34594) (34675 . 35411) (35419 . 36428) (36546 . 38272) (38362 . 40001) (40052 . 41722) (41782 . 43898) (43947 . 45946) (45997 . 46574))
 :END:
-** List of frameworks
-*** Criterion (2k stars) (last release: 2.4.2 May 13 - 2023)
-https://github.com/Snaipe/Criterion
-https://criterion.readthedocs.io/en/latest/
-*** Unity (Throw the switch) (3.9k stars) (last release: 2.6.0 March 10 - 2024)
-https://www.throwtheswitch.org/tools
-https://github.com/ThrowTheSwitch/Unity
-https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityGettingStartedGuide.md
-https://www.throwtheswitch.org/
-*** munit (554 stars)
-https://nemequ.github.io/munit/
-*** Cmocka
-https://cmocka.org/
-https://gitlab.com/cmocka/cmocka
-*** Check (1.1k stars last release: 0.15.2 Aug 9 - 2020)
-https://libcheck.github.io/check/
-https://github.com/libcheck/check
-- cross-platform
-*** AceUnit (last update: 2015)
-https://aceunit.sourceforge.net/
-https://sourceforge.net/projects/aceunit/
-- either dead or finished
-*** CUnit (last update: 2015)
-https://sourceforge.net/projects/cunit/
-*** CuTest (last update: 2018)
-https://cutest.sourceforge.net/
-- highly portable
-** Chat on testing frameworks and Makefiles
-*** which testing frameworks for C and C++ do you know?
+#+title: Chat Google Test
 
-There are several popular testing frameworks for C and C++ that you might find useful. Here are a few:
-
-1. *Google Test (gtest)*: A widely-used C++ testing framework developed by Google.
-
-   #+begin_src cpp
-   #include <gtest/gtest.h>
-
-   TEST(SampleTest, AssertionTrue) {
-     EXPECT_EQ(1, 1);
-   }
-
-   int main(int argc, char **argv) {
-     ::testing::InitGoogleTest(&argc, argv);
-     return RUN_ALL_TESTS();
-   }
-   #+end_src
-
-2. *Catch2*: A versatile testing framework for C++.
-
-   #+begin_src cpp
-   #define CATCH_CONFIG_MAIN
-   #include "catch.hpp"
-
-   TEST_CASE("Sample test", "[example]") {
-     REQUIRE(1 == 1);
-   }
-   #+end_src
-
-3. *CppUnit*: A port of the JUnit framework to C++.
-
-   #+begin_src cpp
-   #include <cppunit/TestCase.h>
-   #include <cppunit/extensions/HelperMacros.h>
-   #include <cppunit/ui/text/TestRunner.h>
-
-   class SampleTest : public CppUnit::TestCase {
-     CPPUNIT_TEST_SUITE(SampleTest);
-     CPPUNIT_TEST(testAssertion);
-     CPPUNIT_TEST_SUITE_END();
-
-   public:
-     void testAssertion() {
-       CPPUNIT_ASSERT(1 == 1);
-     }
-   };
-
-   CPPUNIT_TEST_SUITE_REGISTRATION(SampleTest);
-
-   int main() {
-     CppUnit::TextUi::TestRunner runner;
-     runner.addTest(SampleTest::suite());
-     runner.run();
-     return 0;
-   }
-   #+end_src
-
-4. *Boost.Test*: Part of the Boost libraries, useful if you're already using Boost in your project.
-
-   #+begin_src cpp
-   #define BOOST_TEST_MODULE SampleTest
-   #include <boost/test/included/unit_test.hpp>
-
-   BOOST_AUTO_TEST_CASE(SampleTestCase) {
-     BOOST_CHECK_EQUAL(1, 1);
-   }
-   #+end_src
-
-5. *Unity*: A lightweight C testing framework.
-
-   #+begin_src c
-   #include "unity.h"
-
-   void setUp(void) {}
-   void tearDown(void) {}
-
-   void test_SampleTest(void) {
-     TEST_ASSERT_EQUAL(1, 1);
-   }
-
-   int main(void) {
-     UNITY_BEGIN();
-     RUN_TEST(test_SampleTest);
-     return UNITY_END();
-   }
-   #+end_src
-
-6. *CMocka*: A lightweight and easy-to-use C unit testing framework.
-
-   #+begin_src c
-   #include <stdarg.h>
-   #include <stddef.h>
-   #include <setjmp.h>
-   #include <cmocka.h>
-
-   static void sample_test(void **state) {
-     assert_int_equal(1, 1);
-   }
-
-   int main(void) {
-     const struct CMUnitTest tests[] = {
-       cmocka_unit_test(sample_test),
-     };
-     return cmocka_run_group_tests(tests, NULL, NULL);
-   }
-   #+end_src
-
-Each of these frameworks has its own strengths and use cases. The best one for you will depend on your project's specific requirements and your personal or team's preferences.
-
-*** For now I'am working on C projects, notably I compile with "cc". Can we tighten our search on C test-frameworks?
-
-Absolutely! Focusing on C-specific test frameworks, here are some of the popular choices:
-
-1. *Unity*: A lightweight and portable unit testing framework for C.
-
-   #+begin_src c
-   #include "unity.h"
-
-   void setUp(void) {
-       // Code to set up before each test
-   }
-
-   void tearDown(void) {
-       // Code to clean up after each test
-   }
-
-   void test_SampleTest(void) {
-       TEST_ASSERT_EQUAL(1, 1);
-   }
-
-   int main(void) {
-       UNITY_BEGIN();
-       RUN_TEST(test_SampleTest);
-       return UNITY_END();
-   }
-   #+end_src
-
-2. *CMocka*: An easy-to-use unit testing framework for C with a very simple API.
-
-   #+begin_src c
-   #include <stdarg.h>
-   #include <stddef.h>
-   #include <setjmp.h>
-   #include <cmocka.h>
-
-   static void sample_test(void **state) {
-       assert_int_equal(1, 1);
-   }
-
-   int main(void) {
-       const struct CMUnitTest tests[] = {
-           cmocka_unit_test(sample_test),
-       };
-       return cmocka_run_group_tests(tests, NULL, NULL);
-   }
-   #+end_src
-
-3. *Check*: A unit testing framework for C programs that features a simple interface.
-
-   #+begin_src c
-   #include <check.h>
-
-   START_TEST(sample_test) {
-       ck_assert_int_eq(1, 1);
-   }
-   END_TEST
-
-   Suite* sample_suite(void) {
-       Suite *s;
-       TCase *tc_core;
-
-       s = suite_create("Sample");
-       tc_core = tcase_create("Core");
-
-       tcase_add_test(tc_core, sample_test);
-       suite_add_tcase(s, tc_core);
-
-       return s;
-   }
-
-   int main(void) {
-       int number_failed;
-       Suite *s;
-       SRunner *sr;
-
-       s = sample_suite();
-       sr = srunner_create(s);
-
-       srunner_run_all(sr, CK_NORMAL);
-       number_failed = srunner_ntests_failed(sr);
-       srunner_free(sr);
-
-       return (number_failed == 0) ? 0 : 1;
-   }
-   #+end_src
-
-4. *Criterion*: A cross-platform C unit testing framework which aims to be easy to use.
-
-   #+begin_src c
-   #include <criterion/criterion.h>
-
-   Test(sample, sample_test) {
-       cr_assert_eq(1, 1, "1 should be equal to 1");
-   }
-   #+end_src
-
-5. *CuTest*: A simple framework for writing, organizing, and running C unit tests.
-
-   #+begin_src c
-   #include <stdio.h>
-   #include "CuTest.h"
-
-   void SampleTest(CuTest *tc) {
-       CuAssertIntEquals(tc, 1, 1);
-   }
-
-   CuSuite* SampleGetSuite(void) {
-       CuSuite* suite = CuSuiteNew();
-       SUITE_ADD_TEST(suite, SampleTest);
-       return suite;
-   }
-
-   void RunAllTests(void) {
-       CuString *output = CuStringNew();
-       CuSuite* suite = CuSuiteNew();
-
-       CuSuiteAddSuite(suite, SampleGetSuite());
-       CuSuiteRun(suite);
-
-       CuSuiteSummary(suite, output);
-       CuSuiteDetails(suite, output);
-       printf("%s\n", output->buffer);
-   }
-
-   int main(void) {
-       RunAllTests();
-       return 0;
-   }
-   #+end_src
-
-All the listed frameworks are designed to be easy to integrate and to provide powerful testing capabilities for C projects. Each one has its own advantages. For example, Unity is highly portable, while CMocka provides mock capabilities, and Check offers a more extensive feature set. Choose the one that best fits your needs!
-
-*** I probably don't need mocks for the beginning. I would like it to be easy, but also a good starting point from where I can expand my tests, maybe later switching to a more powerful framework.
-
-Given your requirements, I'd recommend starting with either /Unity/ or /Criterion/. Both frameworks are easy to use and can serve as a good foundation for your tests. /Unity/ is particularly lightweight and simple, while /Criterion/ combines ease of use with more advanced features that you might want to leverage as your tests grow in complexity.
-
-Let's focus on /Unity/ first, as it's one of the simplest to set up and use:
-
-1. *Unity*:
-
-   /Unity/ is easy to get started with and provides a straightforward approach to writing tests. Here’s a simple example:
-
-   #+begin_src c
-   #include "unity.h"
-
-   void setUp(void) {
-       // Set up code here
-   }
-
-   void tearDown(void) {
-       // Clean up code here
-   }
-
-   void test_SampleTest(void) {
-       TEST_ASSERT_EQUAL(1, 1);
-   }
-
-   int main(void) {
-       UNITY_BEGIN();
-       RUN_TEST(test_SampleTest);
-       return UNITY_END();
-   }
-   #+end_src
-   To get started with /Unity/, you'll need to download it from its GitHub repository and include the necessary files in your project.
-
-2. *Criterion*:
-
-   /Criterion/ is also beginner-friendly but has more features that you might find useful as your project evolves.
-
-   Here’s a simple example for /Criterion/:
-
-   #+begin_src c
-   #include <criterion/criterion.h>
-
-   Test(sample, sample_test) {
-       cr_assert_eq(1, 1, "1 should be equal to 1");
-   }
-   #+end_src
-   To get started with /Criterion/, you’ll need to install it (it’s usually available in most package managers) and link it with your project.
-
-If you envision a growing need for more advanced testing capabilities in the near future, starting with /Criterion/ might save you some time switching frameworks later on. However, if simplicity and ease of initial setup are your top priorities, /Unity/ is an excellent choice.
-
-Choose the one that best aligns with your current needs and growth expectations. You won't go wrong with either!
-
-*** Does criterion support mocks?
-
-Yes, /Criterion/ supports mocks, which can be very useful as your testing needs evolve. It provides a way to mock functions and verify interactions, making it a good choice if you anticipate needing more advanced features in the future.
-
-Here’s a simple example demonstrating how you can use mocks in /Criterion/:
-
-1. *Mocking functions*: You can mock functions to intercept calls and define specific behavior for your tests.
-
-Here's an example of mocking a standard C library function:
-
-#+begin_src c
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
-
-int fake_function(const char *input) {
-    cr_log_warn("Fake function called with input: %s\n", input);
-    return 42; // return a predefined value
-}
-
-Test(sample, mock_function_test) {
-    cr_redirect_stdout(); // redirect stdout to capture output
-
-    // Inject the mock
-    CR_DEFINE_FAKE(int, real_function, (const char *));
-    real_function = fake_function;
-
-    // Call the function in your test
-    int result = real_function("test input");
-
-    // Verify the result
-    cr_assert_eq(result, 42, "Expected %d but got %d", 42, result);
-}
-#+end_src
-
-This example demonstrates how you can define a fake function and use it in your test case by overriding the real function. The =cr_redirect_stdout= function is used to capture any print statements (for instance, if you were testing how logging behaves).
-
-2. *Using Mocks for Custom Functions*: If you have custom functions that you'd like to mock, you can use a similar approach:
-
-#+begin_src c
-#include <criterion/criterion.h>
-
-// Original Function
-int add(int a, int b) {
-    return a + b;
-}
-
-// Mock Function
-int mock_add(int a, int b) {
-    return a * b; // Change behavior for the sake of testing
-}
-
-Test(sample, custom_mock_test) {
-    // Inject the mock
-    CR_DEFINE_FAKE(int, add, (int, int));
-    add = mock_add;
-
-    // 6, result);
-}
-#+end_src
-
-In this example, we mocked a simple =add= function to change its behavior within the test.
-
-/Criterion/’s mocking capabilities make it a flexible and powerful framework, allowing you to start with simplistic tests and scale up to more complex scenarios involving mocks and other advanced features. This makes it a solid choice as you grow your testing suite!
-
-*** Is criterion also suited for C++ projects?
-
-While /Criterion/ is specifically designed for C projects and excels in that area, it can also be used in C++ projects, especially when your C++ code maintains C-like characteristics. However, for C++ projects, there are other frameworks more tailored to the language's features and idioms, such as Google Test or Catch2.
-
-That said, if you have a mixed C/C++ project or prefer to use /Criterion/ in a C++ context, you can certainly do so. Here’s how you might set up a simple test in a C++ project using /Criterion/:
-
-**** Example using /Criterion/ in a C++ project
-
-1. Ensure your project is set up to compile with C++.
-
-2. Write test cases using the /Criterion/ API within C++ source files (.cpp):
-
-#+begin_src cpp
-#include <criterion/criterion.h>
-
-// Example C++ function
-int add(int a, int b) {
-    return a + b;
-}
-
-Test(sample_suite, sample_test) {
-    cr_assert_eq(add(2, 3), 5, "Expected 2 + 3 to be 5");
-}
-#+end_src
-
-3. Compile your project linking against the /Criterion/ library.
-
-**** Compiling and Running
-
-Here's an example Makefile snippet to compile a C++ project using /Criterion/:
-
-#+begin_src makefile
-CXX := g++
-CXXFLAGS := -std=c++11 -Wall -Wextra
-LDFLAGS := -lcriterion
-
-SRCS := main.cpp
-OBJS := $(SRCS:.cpp=.o)
-
-all: test
-
-test: $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
-
-clean:
-	rm -f $(OBJS) test
-
-.PHONY: all clean
-#+end_src
-
-Run the =make= command to compile, and then execute the =./test= binary to run your test cases.
-
-While /Criterion/ can handle C++ code, you might find that frameworks specially designed for C++ (like Google Test or Catch2) offer integrations and features that better match C++ paradigms, such as class testing, templates, and exception handling.
-
-*Recommendation*: If your codebase is predominantly C++, consider shifting to a C++-specific testing framework. If your project is primarily in C with occasional C++ integration, /Criterion/ is a perfectly valid choice and can handle the C++ parts well.
-
-***
 ** Chat on how to use googleTest
 *** May i use GoogleTest for testing C code?
 
@@ -1614,68 +1172,354 @@ Here’s a step-by-step guide:
    }
    #+end_src
 
-4. /Update your Makefile to include the new files/:
 
-   /Makefile/:
-   #+begin_src makefile
-   # Compiler and flags
-   CC := gcc
-   CXX := g++
-   CFLAGS := -Wall -Wextra -std=c99
-   CXXFLAGS := -Wall -Wextra -std=c++14
-   LDFLAGS := -lgtest -lgtest_main -pthread
-
-   # Directories
-   SRC_DIR := src
-   OBJ_DIR := obj
-   BIN_DIR := bin
-   TESTS_DIR := tests
-
-   # Source files and object files
-   SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
-   OBJ_FILES := $(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-   TEST_FILES := $(wildcard $(TESTS_DIR)/*.cpp)
-   TEST_OBJ_FILES := $(TEST_FILES:$(TESTS_DIR)/%.cpp=$(OBJ_DIR)/%.o)
-
-   # Executable names
-   TARGET := $(BIN_DIR)/ft_bzero_app
-   TEST_TARGET := $(BIN_DIR)/run_ft_bzero_tests
-
-   .PHONY: all clean
-
-   all: $(TARGET) $(TEST_TARGET)
-
-   # Build the main application (if you have one)
-   $(TARGET): $(OBJ_FILES)
-       $(CC) -o $@ $^
-
-   # Build the tests executable
-   $(TEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
-       $(CXX) -o $@ $^ $(LDFLAGS)
-
-   # Compile C source files to object files
-   $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-       @mkdir -p $(OBJ_DIR)
-       $(CC) $(CFLAGS) -c $< -o $@
-
-   # Compile C++ test files to object files
-   $(OBJ_DIR)/%.o: $(TESTS_DIR)/%.cpp
-       @mkdir -p $(OBJ_DIR)
-       $(CXX) $(CXXFLAGS) -c $< -o $@
-
-   # Clean up build files
-   clean:
-       rm -rf $(OBJ_DIR)/*.o $(BIN_DIR)//
-   #+end_src
-
-5. /Build and run your tests/:
-
-   Navigate to your project's root directory and run:
-   #+begin_src sh
-   make
-   ./bin/run_ft_bzero_tests
-   #+end_src
 
 This setup will compile your =ft_bzero= function and the GoogleTest tests, allowing you to verify the correctness of the implementation. The parameterized tests will check different scenarios, ensuring comprehensive coverage.
+
+*** I have a reimplementation of memmove. How may I test it for correctness?
+
+
+To test your reimplementation of =memmove= (let's call it =ft_memmove=) for correctness using GoogleTest, follow similar steps as before:
+
+
+3. /Write GoogleTest tests to verify the correctness of your =ft_memmove= function/:
+
+   /tests/test_ft_memmove.cpp/:
+   #+begin_src cpp
+   #include <gtest/gtest.h>
+   #include "ft_memmove.h"
+   #include <cstring> // For std::memcmp and std::memmove
+
+   struct MemmoveTestParam {
+       const char/ src;
+       size_t offset;
+       size_t len;
+       const char/ expected;
+   };
+
+   class MemmoveTest : public ::testing::TestWithParam<MemmoveTestParam> {};
+
+   TEST_P(MemmoveTest, HandlesVariousInputs) {
+       MemmoveTestParam param = GetParam();
+       char buffer[100] = "Some initial data";
+       char expected[100] = "Some initial data";
+
+       ft_memmove(buffer + param.offset, buffer, param.len);
+       std::memmove(expected + param.offset, expected, param.len);
+
+       EXPECT_EQ(std::memcmp(buffer, expected, sizeof(buffer)), 0);
+   }
+
+   INSTANTIATE_TEST_SUITE_P(
+       MemmoveTests,
+       MemmoveTest,
+       ::testing::Values(
+           // Add test values here
+           MemmoveTestParam{"hello", 0, 5, "hello"},
+           MemmoveTestParam{"Some initial data", 5, 8, "Some Some initial data"},
+           MemmoveTestParam{"123456789", 3, 5, "12312345"},
+           MemmoveTestParam{"123456789", 4, 5, "123412345"}
+       )
+   );
+
+   int main(int argc, char /argv) {
+       ::testing::InitGoogleTest(&argc, argv);
+       return RUN_ALL_TESTS();
+   }
+   #+end_src
+
+
+This setup will compile your =ft_memmove= function and the GoogleTest tests, allowing you to verify the correctness of the implementation. The parameterized tests will check different scenarios to ensure comprehensive coverage.
+
+*** why do you have a src parameter? And I don't see a test case where src and dest are overlapping, in that order
+
+
+3. *Write GoogleTest tests for =ft_memmove=*:
+
+    */tests/test_ft_memmove.cpp/*:
+    #+begin_src cpp
+    #include <gtest/gtest.h>
+    #include "ft_memmove.h"
+    #include <cstring> // For std::memcmp, std::memmove, std::memset
+
+    struct MemmoveTestParam {
+        size_t offset_src;
+        size_t offset_dst;
+        size_t len;
+        const char* initial_buffer;
+        const char* expected;
+    };
+
+    class MemmoveTest : public ::testing::TestWithParam<MemmoveTestParam> {};
+
+    TEST_P(MemmoveTest, HandlesVariousInputs) {
+        MemmoveTestParam param = GetParam();
+        char buffer[100], expected[100];
+
+        std::strncpy(buffer, param.initial_buffer, sizeof(buffer) - 1);
+        std::strncpy(expected, param.initial_buffer, sizeof(expected) - 1);
+        buffer[sizeof(buffer) - 1] = '\0';
+        expected[sizeof(expected) - 1] = '\0';
+
+        ft_memmove(buffer + param.offset_dst, buffer + param.offset_src, param.len);
+        std::memmove(expected + param.offset_dst, expected + param.offset_src, param.len);
+
+        EXPECT_EQ(std::memcmp(buffer, expected, sizeof(buffer)), 0);
+    }
+
+    INSTANTIATE_TEST_SUITE_P(
+        MemmoveTests,
+        MemmoveTest,
+        ::testing::Values(
+            MemmoveTestParam{0, 5, 5, "hello world", "hellohello world"},
+            MemmoveTestParam{0, 0, 5, "hello world", "hellohello world"},
+            MemmoveTestParam{5, 0, 5, "hello world", "world hello"},
+            MemmoveTestParam{10, 0, 1, "0123456789", "90123456789"},
+            MemmoveTestParam{0, 10, 1, "0123456789", "012345678909"}
+        )
+    );
+
+    int main(int argc, char** argv) {
+        ::testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+    }
+    #+end_src
+
+
+*** You don't need to include all the other points every time. I want you to be concise
+
+Got it! Here's the concise correction with overlapping test cases for =ft_memmove=:
+
+*Tests for =ft_memmove= function:*
+
+*/tests/test_ft_memmove.cpp/*:
+#+begin_src cpp
+#include <gtest/gtest.h>
+#include "ft_memmove.h"
+#include <cstring> // For std::memcmp, std::memmove, std::memset
+
+struct MemmoveTestParam {
+    size_t offset_src;
+    size_t offset_dst;
+    size_t len;
+    const char* initial_buffer;
+    const char* expected;
+};
+
+class MemmoveTest : public ::testing::TestWithParam<MemmoveTestParam> {};
+
+TEST_P(MemmoveTest, HandlesVariousInputs) {
+    MemmoveTestParam param = GetParam();
+    char buffer[100], expected[100];
+
+    std::strncpy(buffer, param.initial_buffer, sizeof(buffer) - 1);
+    std::strncpy(expected, param.initial_buffer, sizeof(expected) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    expected[sizeof(expected) - 1] = '\0';
+
+    ft_memmove(buffer + param.offset_dst, buffer + param.offset_src, param.len);
+    std::memmove(expected + param.offset_dst, expected + param.offset_src, param.len);
+
+    EXPECT_EQ(std::memcmp(buffer, expected, sizeof(buffer)), 0);
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    MemmoveTests,
+    MemmoveTest,
+    ::testing::Values(
+        MemmoveTestParam{0, 5, 5, "hello world", "hellohello world"},  // non-overlapping
+        MemmoveTestParam{6, 0, 5, "foobar hello", "helloar hello"},    // overlapping src < dst
+        MemmoveTestParam{0, 6, 5, "hello foobar", "hello helloar"}     // overlapping dst < src
+    )
+);
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+#+end_src
+This includes overlapping test cases for =ft_memmove=.
+*** why would you use differnt initial content ?
+
+You're right. Using consistent initial content simplifies the comparison. Let's update the tests to use consistent initial content for more clarity:
+
+#+begin_src cpp
+// tests/test_ft_memmove.cpp
+#include <gtest/gtest.h>
+#include "ft_memmove.h"
+#include <cstring> // For std::memcmp, std::memmove, std::memset
+
+struct MemmoveTestParam {
+    size_t offset_src;
+    size_t offset_dst;
+    size_t len;
+    const char* initial_buffer;
+    const char* expected;
+};
+
+class MemmoveTest : public ::testing::TestWithParam<MemmoveTestParam> {};
+
+TEST_P(MemmoveTest, HandlesVariousInputs) {
+    MemmoveTestParam param = GetParam();
+    char buffer[100], expected[100];
+
+    std::strncpy(buffer, param.initial_buffer, sizeof(buffer) - 1);
+    std::strncpy(expected, param.initial_buffer, sizeof(expected) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    expected[sizeof(expected) - 1] = '\0';
+
+    ft_memmove(buffer + param.offset_dst, buffer + param.offset_src, param.len);
+    std::memmove(expected + param.offset_dst, expected + param.offset_src, param.len);
+
+    EXPECT_EQ(std::memcmp(buffer, expected, sizeof(buffer)), 0);
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    MemmoveTests,
+    MemmoveTest,
+    ::testing::Values(
+        MemmoveTestParam{0, 5, 5, "hello world", "hellohello world"},  // non-overlapping
+        MemmoveTestParam{6, 0, 5, "hello world", "world world"},       // overlapping src < dst
+        MemmoveTestParam{0, 6, 5, "hello world", "hello hello"}        // overlapping dst < src
+    )
+);
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+#+end_src
+Now all tests use the same initial content, "hello world".
+
+*** yes, but why would you have two parameters for that?
+
+You're correct, having distinct source and destination offsets for the initial content within a single test case was redundant. We should test typical cases using a single consistent initial buffer.
+
+Let's simplify it by defining tests that use the same buffer for both the source and destination, while varying the positions of the move operation:
+
+#+begin_src cpp
+// tests/test_ft_memmove.cpp
+#include <gtest/gtest.h>
+#include "ft_memmove.h"
+#include <cstring> // For std::memcmp, std::memmove, std::memset
+
+struct MemmoveTestParam {
+    size_t offset_src;
+    size_t offset_dst;
+    size_t len;
+    const char* initial_buffer;
+    const char* expected_buffer;
+};
+
+class MemmoveTest : public ::testing::TestWithParam<MemmoveTestParam> {};
+
+TEST_P(MemmoveTest, HandlesVariousInputs) {
+    MemmoveTestParam param = GetParam();
+    char buffer[100], expected[100];
+
+    // Initialize the buffers with the initial content
+    std::strncpy(buffer, param.initial_buffer, sizeof(buffer) - 1);
+    std::strncpy(expected, param.initial_buffer, sizeof(expected) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    expected[sizeof(expected) - 1] = '\0';
+
+    // Perform memmove operations
+    ft_memmove(buffer + param.offset_dst, buffer + param.offset_src, param.len);
+    std::memmove(expected + param.offset_dst, expected + param.offset_src, param.len);
+
+    // Verify the results
+    EXPECT_EQ(std::memcmp(buffer, expected, sizeof(buffer)), 0);
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    MemmoveTests,
+    MemmoveTest,
+    ::testing::Values(
+        // Non-overlapping
+        MemmoveTestParam{0, 5, 5, "hello world", "hellohello world"},
+        // Overlapping src < dst
+        MemmoveTestParam{6, 0, 5, "hello world", "world world"},
+        // Overlapping dst < src
+        MemmoveTestParam{0, 6, 5, "hello world", "hello hello"}
+    )
+);
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+#+end_src
+
+This setup now clearly tests the =ft_memmove= function with consistent initial conditions and logical parameters for source and destination offsets within the same buffer.
+
+*** you stil have const char* expected_buffer
+
+Thank you for pointing that out. We can eliminate the =expected_buffer= parameter since we will calculate the expected result within the test. Here’s the updated test file:
+
+#+begin_src cpp
+// tests/test_ft_memmove.cpp
+#include <gtest/gtest.h>
+#include "ft_memmove.h"
+#include <cstring> // For std::memcmp, std::memmove, std::memset
+
+struct MemmoveTestParam {
+    size_t offset_src;
+    size_t offset_dst;
+    size_t len;
+    const char* initial_buffer;
+};
+
+class MemmoveTest : public ::testing::TestWithParam<MemmoveTestParam> {};
+
+TEST_P(MemmoveTest, HandlesVariousInputs) {
+    MemmoveTestParam param = GetParam();
+    char buffer[100], expected[100];
+
+    // Initialize the buffers with the initial content
+    std::strncpy(buffer, param.initial_buffer, sizeof(buffer) - 1);
+    std::strncpy(expected, param.initial_buffer, sizeof(expected) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    expected[sizeof(expected) - 1] = '\0';
+
+    // Perform memmove operations
+    ft_memmove(buffer + param.offset_dst, buffer + param.offset_src, param.len);
+    std::memmove(expected + param.offset_dst, expected + param.offset_src, param.len);
+
+    // Verify the results
+    EXPECT_EQ(std::memcmp(buffer, expected, sizeof(buffer)), 0);
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    MemmoveTests,
+    MemmoveTest,
+    ::testing::Values(
+        // Non-overlapping
+        MemmoveTestParam{0, 5, 5, "hello world"},
+        // Overlapping src < dst
+        MemmoveTestParam{6, 0, 5, "hello world"},
+        // Overlapping dst < src
+        MemmoveTestParam{0, 6, 5, "hello world"}
+    )
+);
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+#+end_src
+
+In this updated version, we only have the =initial_buffer= parameter. The expected results are calculated within the test itself using the standard =std::memmove= function. This ensures that the expected results dynamically correspond to the inputs, making the test cases easier to manage and reducing redundancy.
+
+***
+*** Hello, what have we been talking about?
+
+We've been discussing how to test the correctness of custom implementations of C standard library functions (=ft_strlcpy=, =ft_strlcat=, =ft_bzero=, and =ft_memmove=) using GoogleTest. Specifically, we've covered:
+
+1. Setting up the project directory structure.
+2. Creating source and header files for your custom functions.
+3. Writing parameterized GoogleTest tests for these functions.
+4. Ensuring consistency and proper testing of edge cases such as overlapping memory regions in =ft_memmove=.
+
+If there's a specific aspect you'd like to revisit or expand upon, let me know!
 
 ***

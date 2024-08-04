@@ -51,30 +51,27 @@ CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
 - [X] strchr
 - [X] strrchr
 - [X] atoi
-- [ ] bzero
-- [ ] memset
-- [ ] memchr
-- [ ] memcpy
-- [ ] memcmp
-- [ ] memmove
+- [X] bzero
+- [X] memset
+- [X] memchr
+- [X] memcpy
+- [X] memcmp
+- [X] memmove
 ** DONE with malloc
-- [ ] calloc
-- [ ] strdup
+- [X] calloc
+- [X] strdup
 * TODO Part 2
 ** DONE ft_substr
 ** DONE ft_strjoin
 ** DONE ft_split
-:LOGBOOK:
-CLOCK: [2024-07-31 Wed 19:11]--[2024-07-31 Wed 19:34] =>  0:23
-:END:
-** DONE ft_strtrim
-** TODO ft_strmapi
-** TODO ft_striteri
 ** DONE ft_putchar_fd
 ** DONE ft_putstr_fd
 ** DONE ft_putendl_fd
 ** DONE ft_putnbr_fd
 ** TODO ft_itoa
+** TODO ft_strtrim
+** TODO ft_strmapi
+** TODO ft_striteri
 * TODO Bonus Part
 #+begin_src c
 typedef struct s_list
