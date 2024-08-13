@@ -28,6 +28,6 @@ void	ft_putnbr_fd(int nb, int fd)
 		nb /= 10;
 	}
 	while (--idx >= 0)
-		ft_putchar_fd(arr[idx++] + '0', fd);
+		ft_putchar_fd(arr[idx] + '0', fd);
 	ft_putchar_fd('\n', fd);
 }

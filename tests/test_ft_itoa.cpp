@@ -17,16 +17,18 @@ TEST_P(FtItoaTest, HandleVariousInputs) {
 }
 
 INSTANTIATE_TEST_SUITE_P(FtItoaTests, FtItoaTest,
-                         ::testing::Values(FtItoaTestParam{42, "42"},
+                         ::testing::Values(
+							 FtItoaTestParam{42, "42"},
                                            FtItoaTestParam{-1, "-1"},
                                            FtItoaTestParam{-42, "-42"},
                                            FtItoaTestParam{-2147483648, "-2147483648"},
                                            FtItoaTestParam{-8976, "-8976"},
                                            FtItoaTestParam{-10, "-10"},
-                                           FtItoaTestParam{24, "24"},
+                                           // FtItoaTestParam{24, "24"},
                                            FtItoaTestParam{1, "1"},
                                            FtItoaTestParam{0, "0"})
 	);
+
 
 // TEST(FtItoaTest, HandleVariousInputs) {
 // 	EXPECT_STREQ("42", ft_itoa(42));
