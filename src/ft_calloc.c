@@ -21,10 +21,10 @@ static int	int_overflow(size_t nmemb, size_t size)
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void			*ptr;
+	void	*ptr;
 
 	if (!nmemb || !size)
-		return ft_get_empty_str();
+		return (ft_get_empty_str());
 	if (int_overflow(nmemb, size))
 		return (NULL);
 	ptr = malloc(size * nmemb);

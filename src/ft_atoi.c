@@ -19,7 +19,6 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	sign = 1;
 	if (*nptr == '-' || *nptr == '+')
-
 	{
 		if (*nptr == '-')
 			sign *= -1;

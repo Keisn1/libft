@@ -51,6 +51,8 @@ extern "C"
 	char *ft_strdup(const char *s);
 	void *ft_calloc(size_t nmemb, size_t size);
 	char *ft_itoa(int n);
+	char	*ft_strtrim(char const *s1, char const *set);
+	char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 	char *ft_get_empty_str(void);
 	int	ft_abs(int x);

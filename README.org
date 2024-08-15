@@ -68,7 +68,7 @@ CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
 ** DONE ft_putstr_fd
 ** DONE ft_putendl_fd
 ** DONE ft_putnbr_fd
-** TODO ft_itoa
+** DONE ft_itoa
 ** TODO ft_strtrim
 ** TODO ft_strmapi
 ** TODO ft_striteri

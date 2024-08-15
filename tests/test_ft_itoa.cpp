@@ -1,4 +1,3 @@
-#include "gtest/gtest.h"
 #include <gtest/gtest.h>
 #include "libft.h"
 
@@ -24,7 +23,8 @@ INSTANTIATE_TEST_SUITE_P(FtItoaTests, FtItoaTest,
                                            FtItoaTestParam{-2147483648, "-2147483648"},
                                            FtItoaTestParam{-8976, "-8976"},
                                            FtItoaTestParam{-10, "-10"},
-                                           // FtItoaTestParam{24, "24"},
+                                           FtItoaTestParam{24, "24"},
+                                           FtItoaTestParam{497245, "497245"},
                                            FtItoaTestParam{1, "1"},
                                            FtItoaTestParam{0, "0"})
 	);
