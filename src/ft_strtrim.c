@@ -23,6 +23,20 @@ int	ft_chr_in_set(char const *set, char c)
 	return (0);
 }
 
+const char	*find_start(char const *s1, char const *set)
+{
+	while (ft_chr_in_set(set, *s1))
+		s1++;
+	return (s1);
+}
+
+const char	*find_end(char const *s1, char const *set)
+{
+	while (ft_chr_in_set(set, *s1))
+		s1--;
+	return (s1);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char const	*start;
@@ -34,14 +48,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len_s1 = ft_strlen(s1);
 	if (!len_s1)
 		return (ft_get_empty_str());
-	start = s1;
-	while (ft_chr_in_set(set, *start))
-		start++;
+	start = find_start(s1, set);
 	if (!*start)
 		return (ft_get_empty_str());
-	end = s1 + (len_s1 - 1);
-	while (ft_chr_in_set(set, *end))
-		end--;
+	end = find_end(s1 + (len_s1 - 1), set);
 	end++;
 	res_o = (char *)malloc((end - start + 1) * sizeof(char));
 	if (!res_o)
