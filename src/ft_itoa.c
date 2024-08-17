@@ -40,24 +40,29 @@ void	ft_rev_char_tab(char *tab, int size)
 	}
 }
 
+int	is_sign(int n)
+{
+	if (n < 0)
+		return (1);
+	return (0);
+}
+
 char	*ft_itoa(int n)
 {
-	int		sign;
+	int		sign_bit;
 	int		length;
 	char	*ret;
 	int		idx;
 
 	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
-	sign = 0;
-	if (n < 0)
-		sign = 1;
+	sign_bit = is_sign(n);
 	length = get_length(ft_abs(n));
-	ret = (char *)malloc(sizeof(char) * (length + sign + 1));
+	ret = (char *)malloc(sizeof(char) * (length + sign_bit + 1));
 	if (ret == NULL)
 		return (NULL);
 	idx = 0;
-	if (sign)
+	if (sign_bit)
 		ret[idx++] = '-';
 	ret[idx++] = ft_abs(n) % 10 + '0';
 	n = ft_abs(n) / 10;
@@ -67,6 +72,6 @@ char	*ft_itoa(int n)
 		n = n / 10;
 	}
 	ret[idx] = '\0';
-	ft_rev_char_tab(ret + sign, length);
+	ft_rev_char_tab(ret + sign_bit, length);
 	return (ret);
 }
