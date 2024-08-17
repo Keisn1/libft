@@ -67,7 +67,7 @@ char	**ft_split(char *str, char c)
 
 	nbr_of_words = count_words(str, c);
 	strs = (char **)malloc((nbr_of_words + 1) * sizeof(char *));
-	while (*str && *str==c)
+	while (*str && *str == c)
 		str++;
 	count = 0;
 	while (count < nbr_of_words)
