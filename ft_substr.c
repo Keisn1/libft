@@ -15,17 +15,21 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	len_s;
+	size_t	count;
 	char	*new;
 
 	len_s = ft_strlen(s);
+	if (start >= len_s)
+		return (ft_get_empty_str());
 	if ((len_s - start) < len)
 		len = len_s - start;
 	new = (char *)malloc(sizeof(char) * len + 1);
 	if (!new)
 		return (NULL);
-	while (start < len)
+	count = 0;
+	while (count < len)
 	{
-		new[start] = s[start];
+		new[count++] = s[start];
 		start++;
 	}
 	new[start] = '\0';
