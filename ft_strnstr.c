@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	n;
 
 	if (len == 0 || little == NULL)
-		return (NULL);
+		return ("");
 	n = ft_strlen(little);
 	if (!*little)
 		return ((char *)big);
