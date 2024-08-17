@@ -21,7 +21,7 @@ SRC_FILES := $(wildcard *.c)
 OBJ_FILES := $(SRC_FILES:%.c=$(OBJ_DIR)/%.o)
 
 #Library name
-NAME := $(BIN_DIR)/libft.a
+NAME := libft.a
 
 # Executable names
 .DEFAULT_GOAL := all
@@ -31,11 +31,11 @@ NAME := $(BIN_DIR)/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	@mkdir -p $(BIN_DIR)
 	ar rc $@ $^
 
 # Compile C source files to object files
 $(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ############ PHONY ##################
@@ -43,7 +43,7 @@ clean:
 	rm -f $(OBJ_FILES) $(TEST_OBJ_FILES)
 
 fclean: clean
-	rm -f $(BIN_DIR)/*
+	rm -f $(NAME)
 
 re: fclean all
 
