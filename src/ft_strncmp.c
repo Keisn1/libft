@@ -32,7 +32,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	if (count == n)
 		return (0);
-
 	c1 = (unsigned char)s1[idx];
 	c2 = (unsigned char)s2[idx];
 	return (c1 - c2);
