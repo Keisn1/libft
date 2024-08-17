@@ -14,18 +14,26 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int				sum;
+	size_t			count;
 	unsigned int	idx;
+	unsigned char	c1;
+	unsigned char	c2;
 
-	sum = 0;
+	count = 0;
 	idx = 0;
-	while (1)
+	while (s1[idx] != '\0' && s2[idx] != '\0' && count < n)
 	{
-		if (idx >= n)
-			return (sum);
-		sum = s1[idx] - s2[idx];
-		if (s1[idx] == '\0' || s2[idx] == '\0' || sum)
-			return (sum);
+		c1 = (unsigned char)s1[idx];
+		c2 = (unsigned char)s2[idx];
+		if (c1 != c2)
+			return (c1 - c2);
 		idx++;
+		count++;
 	}
+	if (count == n)
+		return (0);
+
+	c1 = (unsigned char)s1[idx];
+	c2 = (unsigned char)s2[idx];
+	return (c1 - c2);
 }
