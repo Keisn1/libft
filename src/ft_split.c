@@ -12,16 +12,6 @@
 
 #include "libft.h"
 
-void	free_strs(char **strs);
-
-int	is_sep(char c, char *charset)
-{
-	while (*charset)
-		if (*charset++ == c)
-			return (1);
-	return (0);
-}
-
 char	*advance_until_sep(char *str, char c)
 {
 	while (*str && (*str != c))
@@ -57,29 +47,55 @@ int	count_words(char *str, char c)
 	return (count);
 }
 
+void	free_strs(char **strs, size_t len)
+{
+	size_t	idx;
+
+	idx = 0;
+	while (idx < len)
+		free(strs[idx++]);
+	free(strs);
+}
+
+char	*extract_string(char *str, char *end_word)
+{
+	char	*ret;
+	size_t	idx;
+
+	ret = (char *)malloc(((end_word - str) + 1) * sizeof(char));
+	if (ret == NULL)
+		return (NULL);
+	idx = 0;
+	while (str != end_word)
+		ret[idx++] = *str++;
+	ret[idx] = '\0';
+	return (ret);
+}
+
 char	**ft_split(char *str, char c)
 {
 	char	**strs;
 	char	*end_word;
 	int		nbr_of_words;
-	int		idx;
 	int		count;
 
 	nbr_of_words = count_words(str, c);
 	strs = (char **)malloc((nbr_of_words + 1) * sizeof(char *));
+	if (strs == NULL)
+		return (NULL);
 	while (*str && *str == c)
 		str++;
 	count = 0;
-	while (count < nbr_of_words)
+	while (nbr_of_words-- > 0)
 	{
 		end_word = advance_until_sep(str, c);
-		strs[count] = (char *)malloc(((end_word - str) + 1) * sizeof(char));
+		strs[count] = extract_string(str, end_word);
 		if (strs[count] == NULL)
+		{
+			free_strs(strs, count);
 			return (NULL);
-		idx = 0;
-		while (str != end_word)
-			strs[count][idx++] = *str++;
-		strs[count++][idx] = '\0';
+		}
+		count++;
 		str = advance_after_sep(str, c);
 	}
 	strs[count] = NULL;
