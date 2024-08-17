@@ -22,42 +22,42 @@ int	is_sep(char c, char *charset)
 	return (0);
 }
 
-char	*advance_until_sep(char *str, char *charset)
+char	*advance_until_sep(char *str, char c)
 {
-	while (*str && !is_sep(*str, charset))
+	while (*str && (*str != c))
 		str++;
 	return (str);
 }
 
-char	*advance_after_sep(char *str, char *charset)
+char	*advance_after_sep(char *str, char c)
 {
-	str = advance_until_sep(str, charset);
-	while (*str && is_sep(*str, charset))
+	str = advance_until_sep(str, c);
+	while (*str && (*str == c))
 		str++;
 	return (str);
 }
 
-int	count_words(char *str, char *charset)
+int	count_words(char *str, char c)
 {
 	int	count;
 
 	count = 0;
 	if (!*str)
 		return (0);
-	if (!is_sep(*str, charset))
+	if (*str != c)
 		count++;
-	str = advance_after_sep(str, charset);
-	while (*str && is_sep(*str, charset))
+	str = advance_after_sep(str, c);
+	while (*str && (*str == c))
 		str++;
 	while (*str)
 	{
 		count++;
-		str = advance_after_sep(str, charset);
+		str = advance_after_sep(str, c);
 	}
 	return (count);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char *str, char c)
 {
 	char	**strs;
 	char	*end_word;
@@ -65,14 +65,14 @@ char	**ft_split(char *str, char *charset)
 	int		idx;
 	int		count;
 
-	nbr_of_words = count_words(str, charset);
+	nbr_of_words = count_words(str, c);
 	strs = (char **)malloc((nbr_of_words + 1) * sizeof(char *));
-	while (*str && is_sep(*str, charset))
+	while (*str && *str==c)
 		str++;
 	count = 0;
 	while (count < nbr_of_words)
 	{
-		end_word = advance_until_sep(str, charset);
+		end_word = advance_until_sep(str, c);
 		strs[count] = (char *)malloc(((end_word - str) + 1) * sizeof(char));
 		if (strs[count] == NULL)
 			return (NULL);
@@ -80,7 +80,7 @@ char	**ft_split(char *str, char *charset)
 		while (str != end_word)
 			strs[count][idx++] = *str++;
 		strs[count++][idx] = '\0';
-		str = advance_after_sep(str, charset);
+		str = advance_after_sep(str, c);
 	}
 	strs[count] = NULL;
 	return (strs);
