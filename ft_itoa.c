@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <unistd.h>
 
 int	get_length(int n)
 {
@@ -56,6 +54,8 @@ char	*ft_itoa(int n)
 		sign = 1;
 	length = get_length(ft_abs(n));
 	ret = (char *)malloc(sizeof(char) * (length + sign + 1));
+	if (ret == NULL)
+		return (NULL);
 	idx = 0;
 	if (sign)
 		ret[idx++] = '-';

@@ -50,9 +50,6 @@ re: fclean all
 norminette:
 	norminette -R CheckForbiddenSourceHeader -R CheckDefine
 
-# test-valgrind: $(TEST_TARGET)-VALGRIND
-# 	$(VALGRIND) $(VALGRIND_FLAGS) $(TEST_TARGET)-VALGRIND
-
 ############ PRINTING ##################
 #Phony targets
 .PHONY: all clean fclean re bear test-fsanitize norminette

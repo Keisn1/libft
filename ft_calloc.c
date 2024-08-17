@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	int_overflow(size_t nmemb, size_t size)
 {
@@ -24,7 +25,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 
 	if (!nmemb || !size)
-		return (ft_get_empty_str());
+		return (malloc(0));
 	if (int_overflow(nmemb, size))
 		return (NULL);
 	ptr = malloc(size * nmemb);
