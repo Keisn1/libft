@@ -86,9 +86,6 @@ test-fsanitize: $(TEST_TARGET)-FSANITIZE
 norminette:
 	norminette -R CheckForbiddenSourceHeader -R CheckDefine src
 
-# test-valgrind: $(TEST_TARGET)-VALGRIND
-# 	$(VALGRIND) $(VALGRIND_FLAGS) $(TEST_TARGET)-VALGRIND
-
 ############ PRINTING ##################
 #Phony targets
 .PHONY: all clean fclean re bear test-fsanitize norminette
