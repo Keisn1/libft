@@ -13,8 +13,6 @@ CFLAGS := -Wall -Wextra -Werror
 OBJ_DIR := ./obj
 BIN_DIR := ./bin
 TESTS_DIR := ./tests
-SRC_EXT := .c
-OBJ_EXT := .o
 
 #Source files
 SRC_FILES := $(wildcard *.c)
@@ -32,6 +30,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
 	ar rc $@ $^
+
+bonus: $(OBJ_FILES_BONUS)
+	ar r $(NAME) $^
 
 # Compile C source files to object files
 $(OBJ_DIR)/%.o: %.c
@@ -52,7 +53,7 @@ norminette:
 
 ############ PRINTING ##################
 #Phony targets
-.PHONY: all clean fclean re bear test-fsanitize norminette
+.PHONY: all bonus clean fclean re bear test-fsanitize norminette
 
 #Printing
 print_srcs:
