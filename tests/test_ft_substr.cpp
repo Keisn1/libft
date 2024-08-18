@@ -22,7 +22,7 @@ INSTANTIATE_TEST_SUITE_P(
 	FtSubstrTests,
 	FtSubstrTest,
 	::testing::Values(
-		FtSubstrTestParam{"hola", 0, 18446744073709551614, "hola"},
+		FtSubstrTestParam{"hola", 0, 18446744073709, "hola"},
 		FtSubstrTestParam{"lorem ipsum dolor sit amet", 7, 10, "psum dolor"}
 		)
 	);

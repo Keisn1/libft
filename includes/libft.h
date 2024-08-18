@@ -18,6 +18,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
 # ifdef __cplusplus
 extern "C"
 {
@@ -51,14 +57,14 @@ extern "C"
 	char *ft_strdup(const char *s);
 	void *ft_calloc(size_t nmemb, size_t size);
 	char *ft_itoa(int n);
-	char	*ft_strtrim(char const *s1, char const *set);
+	char *ft_strtrim(char const *s1, char const *set);
 	char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-	void ft_striteri(char *s, void (*f)(unsigned int, char*));
+	void ft_striteri(char *s, void (*f)(unsigned int, char *));
 	char *ft_strjoin(char const *s1, char const *s2);
 	int ft_memcmp(const void *s1, const void *s2, size_t n);
 
 	char *ft_get_empty_str(void);
-	int	ft_abs(int x);
+	int ft_abs(int x);
 # ifdef __cplusplus
 }
 # endif
