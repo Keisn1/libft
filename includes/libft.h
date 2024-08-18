@@ -65,6 +65,8 @@ extern "C"
 
 	char *ft_get_empty_str(void);
 	int ft_abs(int x);
+
+    int ft_new();
 # ifdef __cplusplus
 }
 # endif
