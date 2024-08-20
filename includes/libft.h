@@ -71,6 +71,8 @@ extern "C"
 
 	/* bonus */
     t_list *ft_lstnew(void *content);
+	void ft_lstadd_front(t_list **lst, t_list *new_node);
+
 # ifdef __cplusplus
 }
 # endif

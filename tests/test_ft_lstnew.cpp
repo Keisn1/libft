@@ -1,4 +1,3 @@
-#include "gtest/gtest.h"
 #include <gtest/gtest.h>
 #include "libft.h"
 
@@ -13,12 +12,13 @@ TEST_P(FtLstnewTest, HandlesVariousContents) {
 
 	t_list *n = ft_lstnew(params.content);
 	EXPECT_EQ(n->next, (void*)0);
-	EXPECT_EQ(n->content, (void*)0);
+	EXPECT_EQ(n->content, params.content);
 	free(n);
 }
 
 INSTANTIATE_TEST_SUITE_P(FtLstnewTests, FtLstnewTest,
                          ::testing::Values(
-							 FtLstnewParams{(void*)0}
+							 FtLstnewParams{(void*)0},
+							 FtLstnewParams{(void*)"Hello"}
 							 )
 	);
