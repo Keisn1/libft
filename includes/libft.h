@@ -28,6 +28,11 @@ typedef struct s_list
 extern "C"
 {
 # endif
+	/* helper */
+	char *ft_get_empty_str(void);
+	int ft_abs(int x);
+
+	/* mandatory */
 	int ft_tolower(int c);
 	int ft_toupper(int c);
 	int ft_isalpha(char c);
@@ -63,10 +68,9 @@ extern "C"
 	char *ft_strjoin(char const *s1, char const *s2);
 	int ft_memcmp(const void *s1, const void *s2, size_t n);
 
-	char *ft_get_empty_str(void);
-	int ft_abs(int x);
 
-    int ft_new();
+	/* bonus */
+    t_list *ft_lstnew(void *content);
 # ifdef __cplusplus
 }
 # endif
