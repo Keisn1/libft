@@ -56,6 +56,7 @@ bonus: $(OBJ_FILES_BONUS)
 # Compile C source files to object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 # $(OBJ_FILES): $(SRC_FILES) --- this "works", but it would rebuild every .o file if only one .c file changes
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR_BONUS)/%.c
