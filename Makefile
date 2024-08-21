@@ -10,13 +10,12 @@ CXX := g++
 CFLAGS := -Wall -Wextra -Werror
 
 #Directories and extensions
-OBJ_DIR := ./obj
 BIN_DIR := ./bin
 TESTS_DIR := ./tests
 
 #Source files
 SRC_FILES := $(wildcard *.c)
-OBJ_FILES := $(SRC_FILES:%.c=$(OBJ_DIR)/%.o)
+OBJ_FILES := $(SRC_FILES:%.c=%.o)
 
 #Library name
 NAME := libft.a
@@ -35,8 +34,7 @@ bonus: $(OBJ_FILES_BONUS)
 	ar r $(NAME) $^
 
 # Compile C source files to object files
-$(OBJ_DIR)/%.o: %.c
-	@mkdir -p $(OBJ_DIR)
+$%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ############ PHONY ##################
