@@ -9,16 +9,25 @@ TEST(FtStrnstrDeathTest, HandleNullInputs) {
     EXPECT_DEATH(strnstr(NULL, NULL, 0), "");
     EXPECT_DEATH(ft_strnstr(NULL, NULL, 0), "");
 
+    EXPECT_DEATH(strnstr(NULL, NULL, 3), "");
+    EXPECT_DEATH(ft_strnstr(NULL, NULL, 3), "");
+
 	const char* death_str = "hello death";
     EXPECT_DEATH(strnstr(death_str, NULL, 0), "");
     EXPECT_DEATH(ft_strnstr(death_str, NULL, 0), "");
+    EXPECT_DEATH(strnstr(death_str, NULL, 3), "");
+    EXPECT_DEATH(ft_strnstr(death_str, NULL, 3), "");
+
 
     EXPECT_EQ(strnstr(NULL, death_str, 0),  nullptr);
     EXPECT_EQ(ft_strnstr(NULL, death_str, 0),  nullptr);
+    EXPECT_DEATH(strnstr(NULL, death_str, 3),  "");
+    EXPECT_DEATH(ft_strnstr(NULL, death_str, 3),  "");
 
     EXPECT_EQ(strnstr(NULL, "", 0),  nullptr);
     EXPECT_EQ(ft_strnstr(NULL, "", 0),  nullptr);
-    // EXPECT_DEATH(ft_strnstr( NULL,death_str, 0), "");
+    EXPECT_EQ(strnstr(NULL, "", 3),  nullptr);
+    EXPECT_EQ(ft_strnstr(NULL, "", 3),  nullptr);
 }
 
 struct FtStrnstrTestParams {
