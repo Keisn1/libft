@@ -62,5 +62,7 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 char				*ft_get_empty_str(void);
 int					ft_abs(int x);
+
+t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new_node);
 #endif // LIBFT_H
