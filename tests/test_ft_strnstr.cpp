@@ -1,7 +1,25 @@
+#include "gtest/gtest.h"
 #include <cstddef>
 #include <gtest/gtest.h>
 #include "libft.h"
 #include <bsd/string.h>
+
+
+TEST(FtStrnstrDeathTest, HandleNullInputs) {
+    EXPECT_DEATH(strnstr(NULL, NULL, 0), "");
+    EXPECT_DEATH(ft_strnstr(NULL, NULL, 0), "");
+
+	const char* death_str = "hello death";
+    EXPECT_DEATH(strnstr(death_str, NULL, 0), "");
+    EXPECT_DEATH(ft_strnstr(death_str, NULL, 0), "");
+
+    EXPECT_EQ(strnstr(NULL, death_str, 0),  nullptr);
+    EXPECT_EQ(ft_strnstr(NULL, death_str, 0),  nullptr);
+
+    EXPECT_EQ(strnstr(NULL, "", 0),  nullptr);
+    EXPECT_EQ(ft_strnstr(NULL, "", 0),  nullptr);
+    // EXPECT_DEATH(ft_strnstr( NULL,death_str, 0), "");
+}
 
 struct FtStrnstrTestParams {
 	const char *big;
