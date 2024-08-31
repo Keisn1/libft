@@ -30,7 +30,6 @@ extern "C"
 # endif
 	/* helper */
 	char *ft_get_empty_str(void);
-	int ft_abs(int x);
 
 	/* mandatory */
 	int ft_tolower(int c);
@@ -72,6 +71,7 @@ extern "C"
 	/* bonus */
     t_list *ft_lstnew(void *content);
 	void ft_lstadd_front(t_list **lst, t_list *new_node);
+	int ft_lstsize(t_list */* lst*/);
 
 # ifdef __cplusplus
 }
