@@ -30,6 +30,7 @@ extern "C"
 # endif
 	/* helper */
 	char *ft_get_empty_str(void);
+	int	ft_abs(int x);
 
 	/* mandatory */
 	int ft_tolower(int c);
