@@ -68,5 +68,7 @@ char				*ft_get_empty_str(void);
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new_node);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
 
 #endif // LIBFT_H
