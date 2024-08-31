@@ -13,6 +13,17 @@
 #include "libft.h"
 #include <stdio.h>
 
+char	*ft_get_empty_str(void)
+{
+	char	*empty_str;
+
+	empty_str = (char *)malloc(sizeof(char));
+	if (!empty_str)
+		return (NULL);
+	*empty_str = '\0';
+	return (empty_str);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	len_s;
