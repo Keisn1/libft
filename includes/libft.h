@@ -30,7 +30,7 @@ extern "C"
 # endif
 	/* helper */
 	char *ft_get_empty_str(void);
-	int	ft_abs(int x);
+	int ft_abs(int x);
 
 	/* mandatory */
 	int ft_tolower(int c);
@@ -68,12 +68,12 @@ extern "C"
 	char *ft_strjoin(char const *s1, char const *s2);
 	int ft_memcmp(const void *s1, const void *s2, size_t n);
 
-
 	/* bonus */
-    t_list *ft_lstnew(void *content);
+	t_list *ft_lstnew(void *content);
 	void ft_lstadd_front(t_list **lst, t_list *new_node);
-	int ft_lstsize(t_list */* lst*/);
-	t_list *ft_lstlast(t_list */* lst */);
+	int ft_lstsize(t_list * /* lst*/);
+	t_list *ft_lstlast(t_list * /* lst */);
+	void ft_lstadd_back(t_list **lst, t_list *new_node);
 
 # ifdef __cplusplus
 }

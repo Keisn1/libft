@@ -20,7 +20,7 @@ t_list *create_list_last_element_eq_length(int length) {
 	return lst;
 }
 
-void clear_list_2(t_list *lst) {
+void clear_list_3(t_list *lst) {
     while (lst) {
         t_list *tmp = lst;
         lst = lst->next;
@@ -37,7 +37,7 @@ class FtLstlastTest : public testing::TestWithParam<FtLstlastParams> {
 public:
 	~FtLstlastTest() {
 		FtLstlastParams params = GetParam();
-		clear_list_2(params.lst);
+		clear_list_3(params.lst);
 	}
 };
 
@@ -57,9 +57,6 @@ INSTANTIATE_TEST_SUITE_P(
     FtLstlastTests,
 	FtLstlastTest,
 	::testing::Values(
-		// FtLstsizeParams{create_list_last_element_0(10), },
-		// FtLstsizeParams{create_list_last_element_0(1), 1},
-		// FtLstsizeParams{create_list_last_element_0(0), 0},
 		FtLstlastParams{create_list_last_element_eq_length(0)},
 		FtLstlastParams{create_list_last_element_eq_length(1)},
 		FtLstlastParams{create_list_last_element_eq_length(5)},
