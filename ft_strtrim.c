@@ -23,6 +23,17 @@ int	ft_chr_in_set(char const *set, char c)
 	return (0);
 }
 
+char	*ft_get_empty_str(void)
+{
+	char	*empty_str;
+
+	empty_str = (char *)malloc(sizeof(char));
+	if (!empty_str)
+		return (NULL);
+	*empty_str = '\0';
+	return (empty_str);
+}
+
 const char	*find_start(char const *s1, char const *set)
 {
 	while (ft_chr_in_set(set, *s1))

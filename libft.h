@@ -25,7 +25,6 @@ typedef struct s_list
 }					t_list;
 
 /* helper */
-char				*ft_get_empty_str(void);
 int					ft_abs(int x);
 
 int					ft_tolower(int c);
