@@ -1,16 +1,34 @@
 #+title: Libft
+#+macro: libft-cover [[file:cover-libft-bonus.png]]
+#+OPTIONS: ^:nil
+
+{{{libft-cover}}}
+# #+begin_export markdown
+# # [![kfreyer's 42 stats](https://badge.mediaplus.ma/darkblue/kfreyer)](https://github.com/oakoudad/badge42)
+# #+end_export
+
+* What is libft
+=Libft= is the continuiation of what students learned in their [[https://github.com/Keisn1/C-piscine-42][42piscine]], the initial qualification phase for the school.
+
+=Libft= is a project where students build their very first C library. The students learn more about the infrastructure and organization of C. They learn about *static libraries*, what they are, how they are compiled, and how others can use them. Furthermore, the students gain hands-on experience with Makefiles in order to build their library.
+
+The library itself is a collection of functionality mostly focused on input/output operations, but it also includes memory manipulation and an implementation of a =linked list=. Throughout the course, it will serve as a replacement for =stdio=, and the students are required to use it and expand it for further use ([[https://github.com/Keisn1/ft_printf][ft_printf]], [[https://github.com/Keisn1/get-next-line][get-next-line]]).
+
+Moreover, the students are exposed to extensive testing and are required to test their code at a very early stage. In that sense, it is just a continuation of what they were already exposed to during the piscine. The moulinette is a very meticulous program that every student needs to submit their code to. This teaches the students to be extremely rigorous and attentive to detail at a very early stage.
+
+The most important aspect of =libft= is that it is the first project at the school. Students get to know their peers and will perform peer evaluations from day one. This exposure to other people's code and discussions about code and ideas is what makes the school special. They learn to discuss their code so that others can understand them, forcing them to think about the other' perpective. They learn to formulate their ideas concisely and comprehensibly from the first day. Moreover, they develop the habit to ask their peers for help if they are not able to advance by themselves, which in turn teaches everybody to teach code and make it understandable.
 
 * Evaluations
 - tests are encouraged but won't be graded
 - tests are useful during defense and also evaluating peers
 - only the work in the git repository will be graded
-
 * Makefile
 - [ ] Flags: -Wall, -Wextra, -Werror
 - [ ] $(NAME), all, clean, fclean, re
 - [ ] include Rule *bonus* into Makefile (seperate *_bonus.{c/h*} files)
 
 * Mandatory part
+
 |--------------------+----------------------------------------------------------------------------------------------|
 | *Program name*       | libft.a                                                                                      |
 |--------------------+----------------------------------------------------------------------------------------------|
@@ -18,75 +36,21 @@
 |--------------------+----------------------------------------------------------------------------------------------|
 | Makefile           | _NAME_, all, clean, fclean, re                                                                 |
 |--------------------+----------------------------------------------------------------------------------------------|
-| External Functions | Detailed below                                                                               |
+| External Functions | write, malloc, free                                                                          |
 |--------------------+----------------------------------------------------------------------------------------------|
 | Description        | Write your own library: a collection of functions that will be a useful tool for your cursus |
 |--------------------+----------------------------------------------------------------------------------------------|
+| Library            |                                                                                              |
+|--------------------+----------------------------------------------------------------------------------------------|
+| stdlib             | ft_isalpha, ft_isdigit, ft_isalnum,  ft_isascii,  ft_isprint,  ft_toupper,                   |
+|                    | ft_tolower, ft_itoa, ft_atoi                                                                 |
+| string             | ft_strlen,  ft_strlcpy,  ft_strlcat,  ft_strncmp,  ft_strnstr                                |
+|                    | ft_strchr, ft_strrchr, ft_bzero                                                              |
+|                    | ft_memset,  ft_memchr,  ft_memcpy,  ft_memcmp,  ft_memmove                                   |
+|                    | ft_substr, ft_strjoin, ft_strtrim, ft_strmapi, ft_striteri, ft_split                         |
+|                    |                                                                                              |
+| stdio              | ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd                                     |
+|                    |                                                                                              |
+| list               | ft_lstnew,  ft_lstadd_front,  ft_lstsize,  ft_lstlast                                        |
+|                    | ft_lstadd_back,  ft_lstdelone,  ft_lstclear,  ft_lstiter,  ft_lstmap                         |
 
-* Technical considerations
-- no global variables
-- define helper functions as *static*: limits scope to appropriate file
-- all files at the root of your repository
-- *-Wall -Wextra -Wall*
-- use =ar= to create your library (=libtool= command is forbidden)
-- ~libft.a~ is to be created at the root of the repository
-
-* DONE Part 1
-:LOGBOOK:
-CLOCK: [2024-07-31 Wed 14:31]--[2024-07-31 Wed 15:14] =>  0:43
-:END:
-** DONE no external functions
-- [X] isalpha
-- [X] isdigit
-- [X] isalnum
-- [X] isascii
-- [X] isprint
-- [X] toupper
-- [X] tolower
-- [X] strlen
-- [X] strlcpy
-- [X] strlcat
-- [X] strncmp
-- [X] strnstr
-- [X] strchr
-- [X] strrchr
-- [X] atoi
-- [X] bzero
-- [X] memset
-- [X] memchr
-- [X] memcpy
-- [X] memcmp
-- [X] memmove
-** DONE with malloc
-- [X] calloc
-- [X] strdup
-* TODO Part 2
-** DONE ft_substr
-** DONE ft_strjoin
-** DONE ft_split
-** DONE ft_putchar_fd
-** DONE ft_putstr_fd
-** DONE ft_putendl_fd
-** DONE ft_putnbr_fd
-** DONE ft_itoa
-** DONE ft_strtrim
-** DONE ft_strmapi
-** DONE ft_striteri
-* TODO Bonus Part
-#+begin_src c
-typedef struct s_list
-{
-	void *content;
-	struct s_list *next;
-} t_list;
-#+end_src
-
-** TODO ft_lstnew
-** TODO ft_lstadd_front
-** TODO ft_lstsize
-** TODO ft_lstlast
-** TODO ft_lstadd_back
-** TODO ft_lstdelone
-** TODO ft_lstclear
-** TODO ft_lstiter
-** TODO ft_lstmap
