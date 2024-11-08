@@ -40,7 +40,34 @@ make it understandable.
 
 # Makefile and GoogleTests
 
-During this project I got
+During this project, I've begun to familiarize myself with GoogleTest.
+It is essential for 42 students to test their code, and since I really
+like Test Driven Development methodologies, I was eager to get to know
+and use a testing framework for `C/C++`. I've already gained a lot of
+experience in Test Driven Development through courses and books
+([3.1](#TestDriven.io),\[\[\#\*[Learn go with
+tests](https://quii.gitbook.io/learn-go-with-tests)\]\[3.2\]\]) and
+personal projects
+(\[\[\#\*[nand-to-tetris-in-go](https://github.com/Keisn1/nand-to-tetris-in-go)\]\[3.3\]\]).
+In fact, I think that completing the 42 cursus is a perfect opportunity
+to become proficient with a testing framework and at testing in general.
+
+# References
+
+## TestDriven.io
+
+  - [Building Your Own Python Web
+    Framework](https://testdriven.io/courses/python-web-framework/)
+  - [Test-Driven Development with Django, Django REST Framework, and
+    Docker](https://testdriven.io/courses/tdd-django/)
+  - [Developing a Real-Time Taxi App with Django Channels and
+    React](https://testdriven.io/courses/taxi-react/)
+  - [Creating an HTTP Load Balancer in
+    Python](https://testdriven.io/courses/http-load-balancer/)
+
+## [Learn go with tests](https://quii.gitbook.io/learn-go-with-tests)
+
+## [nand-to-tetris-in-go](https://github.com/Keisn1/nand-to-tetris-in-go)
 
 # Mandatory part
 

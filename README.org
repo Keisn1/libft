@@ -2,6 +2,7 @@
 #+macro: libft-cover [[file:cover-libft-bonus.png]]
 #+OPTIONS: ^:nil
 
+
 {{{libft-cover}}}
 # #+begin_export markdown
 # # [![kfreyer's 42 stats](https://badge.mediaplus.ma/darkblue/kfreyer)](https://github.com/oakoudad/badge42)
@@ -19,8 +20,19 @@ Moreover, the students are exposed to extensive testing and are required to test
 The most important aspect of =libft= is that it is the first project at the school. Students get to know their peers and will perform peer evaluations from day one. This exposure to other people's code and discussions about code and ideas is what makes the school special. They learn to discuss their code so that others can understand them, forcing them to think about the other' perpective. They learn to formulate their ideas concisely and comprehensibly from the first day. Moreover, they develop the habit to ask their peers for help if they are not able to advance by themselves, which in turn teaches everybody to teach code and make it understandable.
 
 * Makefile and GoogleTests
-During this project I got
+During this project, I've begun to familiarize myself with GoogleTest.
+It is essential for 42 students to test their code, and since I really like Test Driven Development methodologies, I was eager to get to know and use a testing framework for =C/C++=.
+I've already gained a lot of experience in Test Driven Development through courses and books ([[TestDriven.io][TestDriven.io]],[[*\[\[https://quii.gitbook.io/learn-go-with-tests\]\[Learn go with tests\]\]][Learn go with tests]])  and personal projects ([[*\[\[https://github.com/Keisn1/nand-to-tetris-in-go\]\[nand-to-tetris-in-go\]\]][nand-to-tetris-in-go]]).
+In fact, I think that completing the 42 cursus is a perfect opportunity to become proficient with a testing framework and at testing in general.
         
+* References
+** TestDriven.io
+- [[https://testdriven.io/courses/python-web-framework/][Building Your Own Python Web Framework]]
+- [[https://testdriven.io/courses/tdd-django/][Test-Driven Development with Django, Django REST Framework, and Docker]]
+- [[https://testdriven.io/courses/taxi-react/][Developing a Real-Time Taxi App with Django Channels and React]]
+- [[https://testdriven.io/courses/http-load-balancer/][Creating an HTTP Load Balancer in Python]]
+** [[https://quii.gitbook.io/learn-go-with-tests][Learn go with tests]]
+** [[https://github.com/Keisn1/nand-to-tetris-in-go][nand-to-tetris-in-go]]
 
 * Mandatory part
 
