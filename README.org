@@ -4,9 +4,29 @@
 
 
 {{{libft-cover}}}
+#+begin_export markdown
+<p align="center">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Keisn/libft?color=blueviolet" />
+# </p>
+#+end_export
 # #+begin_export markdown
-# # [![kfreyer's 42 stats](https://badge.mediaplus.ma/darkblue/kfreyer)](https://github.com/oakoudad/badge42)
+# # # [![kfreyer's 42 stats](https://badge.mediaplus.ma/darkblue/kfreyer)](https://github.com/oakoudad/badge42)
+# # #+end_export
+# # #+begin_export markdown
+# # <img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/appinha/42cursus-00-Libft?color=blueviolet" />
+# # <img alt="Code language count" src="https://img.shields.io/github/languages/count/appinha/42cursus-00-Libft?color=blue" />
+# # <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/appinha/42cursus-00-Libft?color=blue" />
+# # <img alt="GitHub last commit" src="https://img.shieklds.io/github/last-commit/appinha/42cursus-00-Libft?color=brightgreen" />
 # #+end_export
+
+* Table of contents :TOC:
+- [[#what-is-libft][What is libft]]
+- [[#makefile-and-googletests][Makefile and GoogleTests]]
+- [[#mandatory-part][Mandatory part]]
+- [[#references][References]]
+  - [[#testdrivenio][TestDriven.io]]
+  - [[#learn-go-with-tests][Learn go with tests]]
+  - [[#from-nand-to-tetris-in-go][From Nand to Tetris in Go]]
 
 * What is libft
 =Libft= is the continuiation of what students learned in their [[https://github.com/Keisn1/C-piscine-42][42piscine]], the initial qualification phase for the school.
@@ -22,18 +42,8 @@ The most important aspect of =libft= is that it is the first project at the scho
 * Makefile and GoogleTests
 During this project, I've begun to familiarize myself with GoogleTest.
 It is essential for 42 students to test their code, and since I really like Test Driven Development methodologies, I was eager to get to know and use a testing framework for =C/C++=.
-I've already gained a lot of experience in Test Driven Development through courses and books ([[TestDriven.io][TestDriven.io]],[[*\[\[https://quii.gitbook.io/learn-go-with-tests\]\[Learn go with tests\]\]][Learn go with tests]])  and personal projects ([[*\[\[https://github.com/Keisn1/nand-to-tetris-in-go\]\[nand-to-tetris-in-go\]\]][nand-to-tetris-in-go]]).
+I've already gained a lot of experience in Test Driven Development through courses and books ([[#testdrivenio][TestDriven.io]], [[#learn-go-with-tests][Learn go with tests]]) and personal projects ([[#from-nand-to-tetris-in-go][From Nand to Tetris in Go]]).
 In fact, I think that completing the 42 cursus is a perfect opportunity to become proficient with a testing framework and at testing in general.
-        
-* References
-** TestDriven.io
-- [[https://testdriven.io/courses/python-web-framework/][Building Your Own Python Web Framework]]
-- [[https://testdriven.io/courses/tdd-django/][Test-Driven Development with Django, Django REST Framework, and Docker]]
-- [[https://testdriven.io/courses/taxi-react/][Developing a Real-Time Taxi App with Django Channels and React]]
-- [[https://testdriven.io/courses/http-load-balancer/][Creating an HTTP Load Balancer in Python]]
-** [[https://quii.gitbook.io/learn-go-with-tests][Learn go with tests]]
-** [[https://github.com/Keisn1/nand-to-tetris-in-go][nand-to-tetris-in-go]]
-
 * Mandatory part
 
 |--------------------+----------------------------------------------------------------------------------------------|
@@ -51,13 +61,25 @@ In fact, I think that completing the 42 cursus is a perfect opportunity to becom
 |--------------------+----------------------------------------------------------------------------------------------|
 | stdlib             | ft_isalpha, ft_isdigit, ft_isalnum,  ft_isascii,  ft_isprint,  ft_toupper,                   |
 |                    | ft_tolower, ft_itoa, ft_atoi                                                                 |
+|--------------------+----------------------------------------------------------------------------------------------|
 | string             | ft_strlen,  ft_strlcpy,  ft_strlcat,  ft_strncmp,  ft_strnstr                                |
 |                    | ft_strchr, ft_strrchr, ft_bzero                                                              |
 |                    | ft_memset,  ft_memchr,  ft_memcpy,  ft_memcmp,  ft_memmove                                   |
 |                    | ft_substr, ft_strjoin, ft_strtrim, ft_strmapi, ft_striteri, ft_split                         |
-|                    |                                                                                              |
+|--------------------+----------------------------------------------------------------------------------------------|
 | stdio              | ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd                                     |
-|                    |                                                                                              |
+|--------------------+----------------------------------------------------------------------------------------------|
 | list               | ft_lstnew,  ft_lstadd_front,  ft_lstsize,  ft_lstlast                                        |
 |                    | ft_lstadd_back,  ft_lstdelone,  ft_lstclear,  ft_lstiter,  ft_lstmap                         |
 
+
+* References
+** TestDriven.io
+- [[https://testdriven.io/courses/python-web-framework/][Building Your Own Python Web Framework]]
+- [[https://testdriven.io/courses/tdd-django/][Test-Driven Development with Django, Django REST Framework, and Docker]]
+- [[https://testdriven.io/courses/taxi-react/][Developing a Real-Time Taxi App with Django Channels and React]]
+- [[https://testdriven.io/courses/http-load-balancer/][Creating an HTTP Load Balancer in Python]]
+** Learn go with tests
+[[https://quii.gitbook.io/learn-go-with-tests][Learn go with tests]]
+** From Nand to Tetris in Go
+[[https://github.com/Keisn1/nand-to-tetris-in-go][nand-to-tetris-in-go]]

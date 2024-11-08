@@ -1,5 +1,19 @@
 ![](cover-libft-bonus.png)
 
+<p align="center">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Keisn/libft?color=blueviolet" />
+# </p>
+
+# Table of contents <span class="tag" data-tag-name="TOC"><span class="smallcaps">TOC</span></span>
+
+  - [What is libft](#what-is-libft)
+  - [Makefile and GoogleTests](#makefile-and-googletests)
+  - [Mandatory part](#mandatory-part)
+  - [References](#references)
+      - [TestDriven.io](#testdrivenio)
+      - [Learn go with tests](#learn-go-with-tests)
+      - [From Nand to Tetris in Go](#from-nand-to-tetris-in-go)
+
 # What is libft
 
 `Libft` is the continuiation of what students learned in their
@@ -45,29 +59,11 @@ It is essential for 42 students to test their code, and since I really
 like Test Driven Development methodologies, I was eager to get to know
 and use a testing framework for `C/C++`. I've already gained a lot of
 experience in Test Driven Development through courses and books
-([3.1](#TestDriven.io),\[\[\#\*[Learn go with
-tests](https://quii.gitbook.io/learn-go-with-tests)\]\[3.2\]\]) and
-personal projects
-(\[\[\#\*[nand-to-tetris-in-go](https://github.com/Keisn1/nand-to-tetris-in-go)\]\[3.3\]\]).
-In fact, I think that completing the 42 cursus is a perfect opportunity
-to become proficient with a testing framework and at testing in general.
-
-# References
-
-## TestDriven.io
-
-  - [Building Your Own Python Web
-    Framework](https://testdriven.io/courses/python-web-framework/)
-  - [Test-Driven Development with Django, Django REST Framework, and
-    Docker](https://testdriven.io/courses/tdd-django/)
-  - [Developing a Real-Time Taxi App with Django Channels and
-    React](https://testdriven.io/courses/taxi-react/)
-  - [Creating an HTTP Load Balancer in
-    Python](https://testdriven.io/courses/http-load-balancer/)
-
-## [Learn go with tests](https://quii.gitbook.io/learn-go-with-tests)
-
-## [nand-to-tetris-in-go](https://github.com/Keisn1/nand-to-tetris-in-go)
+([TestDriven.io](#testdrivenio), [Learn go with
+tests](#learn-go-with-tests)) and personal projects ([From Nand to
+Tetris in Go](#from-nand-to-tetris-in-go)). In fact, I think that
+completing the 42 cursus is a perfect opportunity to become proficient
+with a testing framework and at testing in general.
 
 # Mandatory part
 
@@ -84,8 +80,27 @@ to become proficient with a testing framework and at testing in general.
 |                    | ft\_strchr, ft\_strrchr, ft\_bzero                                                           |
 |                    | ft\_memset, ft\_memchr, ft\_memcpy, ft\_memcmp, ft\_memmove                                  |
 |                    | ft\_substr, ft\_strjoin, ft\_strtrim, ft\_strmapi, ft\_striteri, ft\_split                   |
-|                    |                                                                                              |
 | stdio              | ft\_putchar\_fd, ft\_putstr\_fd, ft\_putendl\_fd, ft\_putnbr\_fd                             |
-|                    |                                                                                              |
 | list               | ft\_lstnew, ft\_lstadd\_front, ft\_lstsize, ft\_lstlast                                      |
 |                    | ft\_lstadd\_back, ft\_lstdelone, ft\_lstclear, ft\_lstiter, ft\_lstmap                       |
+
+# References
+
+## TestDriven.io
+
+  - [Building Your Own Python Web
+    Framework](https://testdriven.io/courses/python-web-framework/)
+  - [Test-Driven Development with Django, Django REST Framework, and
+    Docker](https://testdriven.io/courses/tdd-django/)
+  - [Developing a Real-Time Taxi App with Django Channels and
+    React](https://testdriven.io/courses/taxi-react/)
+  - [Creating an HTTP Load Balancer in
+    Python](https://testdriven.io/courses/http-load-balancer/)
+
+## Learn go with tests
+
+[Learn go with tests](https://quii.gitbook.io/learn-go-with-tests)
+
+## From Nand to Tetris in Go
+
+[nand-to-tetris-in-go](https://github.com/Keisn1/nand-to-tetris-in-go)
