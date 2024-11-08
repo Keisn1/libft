@@ -19,7 +19,7 @@ Moreover, the students are exposed to extensive testing and are required to test
 The most important aspect of =libft= is that it is the first project at the school. Students get to know their peers and will perform peer evaluations from day one. This exposure to other people's code and discussions about code and ideas is what makes the school special. They learn to discuss their code so that others can understand them, forcing them to think about the other' perpective. They learn to formulate their ideas concisely and comprehensibly from the first day. Moreover, they develop the habit to ask their peers for help if they are not able to advance by themselves, which in turn teaches everybody to teach code and make it understandable.
 
 * Makefile and GoogleTests
-During this project I got
+During this project I got.
         
 
 * Mandatory part

@@ -40,7 +40,7 @@ make it understandable.
 
 # Makefile and GoogleTests
 
-During this project I got
+During this project I got.
 
 # Mandatory part
 

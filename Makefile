@@ -9,9 +9,9 @@ CC := cc
 CXX := g++
 CFLAGS := -Wall -Wextra -Werror
 CFLAGS += -Iincludes
-CXXFLAGS := -Wall -Wextra -std=c++14
+CXXFLAGS := -Wall -Wextra
 CXXFLAGS += -Iincludes
-LDFLAGS := -lgtest -lgtest_main -pthread
+LDFLAGS := -Lgtest -lgtest -lgtest_main -pthread
 BSD := -lbsd
 
 # Test Flags
@@ -55,7 +55,6 @@ bonus: $(OBJ_FILES_BONUS)
 
 # Compile C source files to object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-# $(OBJ_FILES): $(SRC_FILES) --- this "works", but it would rebuild every .o file if only one .c file changes
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -65,12 +64,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR_BONUS)/%.c
 # Compile C++ test files to object files
 $(OBJ_DIR)/%.o: $(TESTS_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@ $(BSD) $(LDFLAGS)
 
 # Build the tests executable
 $(TEST_TARGET)-FSANITIZE: $(OBJ_FILES) $(TEST_OBJ_FILES) $(OBJ_FILES_BONUS)
 	@mkdir -p $(BIN_DIR)
-	$(CXX) $(FSANITIZE) -o $@ $^ $(LDFLAGS) $(BSD)
+	$(CXX) $(FSANITIZE) -o $@ $^ $(BSD)  $(LDFLAGS)
 
 ############ PHONY ##################
 clean:

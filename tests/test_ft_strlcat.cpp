@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <bsd/string.h>
 #include "libft.h"
 
 struct FtStrlcatTestParam {
