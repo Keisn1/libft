@@ -13,9 +13,9 @@
       "obj/ft_atoi.o",
       "src/ft_atoi.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_atoi.c",
-    "output": "/home/kay/workspace/libft/obj/ft_atoi.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_atoi.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_atoi.o"
   },
   {
     "arguments": [
@@ -31,9 +31,9 @@
       "obj/ft_bzero.o",
       "src/ft_bzero.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_bzero.c",
-    "output": "/home/kay/workspace/libft/obj/ft_bzero.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_bzero.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_bzero.o"
   },
   {
     "arguments": [
@@ -49,9 +49,9 @@
       "obj/ft_calloc.o",
       "src/ft_calloc.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_calloc.c",
-    "output": "/home/kay/workspace/libft/obj/ft_calloc.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_calloc.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_calloc.o"
   },
   {
     "arguments": [
@@ -67,9 +67,9 @@
       "obj/ft_get_empty_string.o",
       "src/ft_get_empty_string.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_get_empty_string.c",
-    "output": "/home/kay/workspace/libft/obj/ft_get_empty_string.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_get_empty_string.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_get_empty_string.o"
   },
   {
     "arguments": [
@@ -85,9 +85,9 @@
       "obj/ft_isalnum.o",
       "src/ft_isalnum.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_isalnum.c",
-    "output": "/home/kay/workspace/libft/obj/ft_isalnum.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_isalnum.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_isalnum.o"
   },
   {
     "arguments": [
@@ -103,9 +103,9 @@
       "obj/ft_isalpha.o",
       "src/ft_isalpha.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_isalpha.c",
-    "output": "/home/kay/workspace/libft/obj/ft_isalpha.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_isalpha.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_isalpha.o"
   },
   {
     "arguments": [
@@ -121,9 +121,9 @@
       "obj/ft_isascii.o",
       "src/ft_isascii.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_isascii.c",
-    "output": "/home/kay/workspace/libft/obj/ft_isascii.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_isascii.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_isascii.o"
   },
   {
     "arguments": [
@@ -139,9 +139,9 @@
       "obj/ft_isdigit.o",
       "src/ft_isdigit.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_isdigit.c",
-    "output": "/home/kay/workspace/libft/obj/ft_isdigit.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_isdigit.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_isdigit.o"
   },
   {
     "arguments": [
@@ -157,9 +157,9 @@
       "obj/ft_isprint.o",
       "src/ft_isprint.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_isprint.c",
-    "output": "/home/kay/workspace/libft/obj/ft_isprint.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_isprint.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_isprint.o"
   },
   {
     "arguments": [
@@ -175,9 +175,9 @@
       "obj/ft_memchr.o",
       "src/ft_memchr.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_memchr.c",
-    "output": "/home/kay/workspace/libft/obj/ft_memchr.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_memchr.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_memchr.o"
   },
   {
     "arguments": [
@@ -193,9 +193,9 @@
       "obj/ft_memcmp.o",
       "src/ft_memcmp.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_memcmp.c",
-    "output": "/home/kay/workspace/libft/obj/ft_memcmp.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_memcmp.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_memcmp.o"
   },
   {
     "arguments": [
@@ -211,9 +211,9 @@
       "obj/ft_memcpy.o",
       "src/ft_memcpy.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_memcpy.c",
-    "output": "/home/kay/workspace/libft/obj/ft_memcpy.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_memcpy.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_memcpy.o"
   },
   {
     "arguments": [
@@ -229,9 +229,9 @@
       "obj/ft_memmove.o",
       "src/ft_memmove.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_memmove.c",
-    "output": "/home/kay/workspace/libft/obj/ft_memmove.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_memmove.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_memmove.o"
   },
   {
     "arguments": [
@@ -247,9 +247,9 @@
       "obj/ft_memset.o",
       "src/ft_memset.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_memset.c",
-    "output": "/home/kay/workspace/libft/obj/ft_memset.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_memset.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_memset.o"
   },
   {
     "arguments": [
@@ -265,9 +265,9 @@
       "obj/ft_putchar_fd.o",
       "src/ft_putchar_fd.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_putchar_fd.c",
-    "output": "/home/kay/workspace/libft/obj/ft_putchar_fd.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_putchar_fd.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_putchar_fd.o"
   },
   {
     "arguments": [
@@ -283,9 +283,9 @@
       "obj/ft_putendl_fd.o",
       "src/ft_putendl_fd.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_putendl_fd.c",
-    "output": "/home/kay/workspace/libft/obj/ft_putendl_fd.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_putendl_fd.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_putendl_fd.o"
   },
   {
     "arguments": [
@@ -301,9 +301,9 @@
       "obj/ft_putnbr_fd.o",
       "src/ft_putnbr_fd.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_putnbr_fd.c",
-    "output": "/home/kay/workspace/libft/obj/ft_putnbr_fd.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_putnbr_fd.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_putnbr_fd.o"
   },
   {
     "arguments": [
@@ -319,9 +319,9 @@
       "obj/ft_putstr_fd.o",
       "src/ft_putstr_fd.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_putstr_fd.c",
-    "output": "/home/kay/workspace/libft/obj/ft_putstr_fd.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_putstr_fd.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_putstr_fd.o"
   },
   {
     "arguments": [
@@ -337,9 +337,9 @@
       "obj/ft_split.o",
       "src/ft_split.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_split.c",
-    "output": "/home/kay/workspace/libft/obj/ft_split.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_split.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_split.o"
   },
   {
     "arguments": [
@@ -355,9 +355,9 @@
       "obj/ft_strchr.o",
       "src/ft_strchr.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strchr.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strchr.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strchr.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strchr.o"
   },
   {
     "arguments": [
@@ -373,9 +373,9 @@
       "obj/ft_strdup.o",
       "src/ft_strdup.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strdup.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strdup.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strdup.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strdup.o"
   },
   {
     "arguments": [
@@ -391,9 +391,9 @@
       "obj/ft_strjoin.o",
       "src/ft_strjoin.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strjoin.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strjoin.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strjoin.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strjoin.o"
   },
   {
     "arguments": [
@@ -409,9 +409,9 @@
       "obj/ft_strlcat.o",
       "src/ft_strlcat.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strlcat.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strlcat.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strlcat.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strlcat.o"
   },
   {
     "arguments": [
@@ -427,9 +427,9 @@
       "obj/ft_strlcpy.o",
       "src/ft_strlcpy.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strlcpy.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strlcpy.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strlcpy.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strlcpy.o"
   },
   {
     "arguments": [
@@ -445,9 +445,9 @@
       "obj/ft_strlen.o",
       "src/ft_strlen.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strlen.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strlen.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strlen.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strlen.o"
   },
   {
     "arguments": [
@@ -463,9 +463,9 @@
       "obj/ft_strncmp.o",
       "src/ft_strncmp.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strncmp.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strncmp.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strncmp.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strncmp.o"
   },
   {
     "arguments": [
@@ -481,9 +481,9 @@
       "obj/ft_strnstr.o",
       "src/ft_strnstr.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strnstr.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strnstr.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strnstr.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strnstr.o"
   },
   {
     "arguments": [
@@ -499,9 +499,9 @@
       "obj/ft_strrchr.o",
       "src/ft_strrchr.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strrchr.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strrchr.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strrchr.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strrchr.o"
   },
   {
     "arguments": [
@@ -517,9 +517,9 @@
       "obj/ft_strtrim.o",
       "src/ft_strtrim.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_strtrim.c",
-    "output": "/home/kay/workspace/libft/obj/ft_strtrim.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_strtrim.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_strtrim.o"
   },
   {
     "arguments": [
@@ -535,9 +535,9 @@
       "obj/ft_substr.o",
       "src/ft_substr.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_substr.c",
-    "output": "/home/kay/workspace/libft/obj/ft_substr.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_substr.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_substr.o"
   },
   {
     "arguments": [
@@ -553,9 +553,9 @@
       "obj/ft_tolower.o",
       "src/ft_tolower.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_tolower.c",
-    "output": "/home/kay/workspace/libft/obj/ft_tolower.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_tolower.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_tolower.o"
   },
   {
     "arguments": [
@@ -571,9 +571,9 @@
       "obj/ft_toupper.o",
       "src/ft_toupper.c"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/src/ft_toupper.c",
-    "output": "/home/kay/workspace/libft/obj/ft_toupper.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/src/ft_toupper.c",
+    "output": "/home/kfreyer/workspace/libft/obj/ft_toupper.o"
   },
   {
     "arguments": [
@@ -588,8 +588,8 @@
       "obj/test_ft_atoi.o",
       "tests/test_ft_atoi.cpp"
     ],
-    "directory": "/home/kay/workspace/libft",
-    "file": "/home/kay/workspace/libft/tests/test_ft_atoi.cpp",
-    "output": "/home/kay/workspace/libft/obj/test_ft_atoi.o"
+    "directory": "/home/kfreyer/workspace/libft",
+    "file": "/home/kfreyer/workspace/libft/tests/test_ft_atoi.cpp",
+    "output": "/home/kfreyer/workspace/libft/obj/test_ft_atoi.o"
   }
 ]

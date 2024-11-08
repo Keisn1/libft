@@ -38,18 +38,9 @@ develop the habit to ask their peers for help if they are not able to
 advance by themselves, which in turn teaches everybody to teach code and
 make it understandable.
 
-# Evaluations
+# Makefile and GoogleTests
 
-  - tests are encouraged but won't be graded
-  - tests are useful during defense and also evaluating peers
-  - only the work in the git repository will be graded
-
-# Makefile
-
-  - \[ \] Flags: -Wall, -Wextra, -Werror
-  - \[ \] $(NAME), all, clean, fclean, re
-  - \[ \] include Rule **bonus** into Makefile (seperate
-    **\_bonus.{c/h**} files)
+During this project I got
 
 # Mandatory part
 
