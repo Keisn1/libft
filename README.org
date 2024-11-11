@@ -2,7 +2,6 @@
 #+macro: libft-cover [[file:cover-libft-bonus.png]]
 #+OPTIONS: ^:nil
 
-
 {{{libft-cover}}}
 #+begin_export markdown
 <p align="center">
