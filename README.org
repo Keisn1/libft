@@ -4,19 +4,23 @@
 
 
 {{{libft-cover}}}
-# #+begin_export markdown
-# # [![kfreyer's 42 stats](https://badge.mediaplus.ma/darkblue/kfreyer)](https://github.com/oakoudad/badge42)
-# #+end_export
-# #+begin_export markdown
-# <p align="center">
-# <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/appinha/42cursus-00-Libft?color=blueviolet" />
-# <img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/appinha/42cursus-00-Libft?color=blueviolet" />
-# <img alt="Code language count" src="https://img.shields.io/github/languages/count/appinha/42cursus-00-Libft?color=blue" />
-# <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/appinha/42cursus-00-Libft?color=blue" />
-# <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/appinha/42cursus-00-Libft?color=brightgreen" />
-# </p>
-# #+end_export
 
+#+begin_export markdown
+<p align="center">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Keisn1/libft?color=blueviolet" />
+<img alt="Number of lines of code" src="https://img.shields.io/lgtm/lines/g/Keisn/libft"/>
+<img alt="Code language count" src="https://img.shields.io/github/languages/count/Keisn1/libft?color=blue" />
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Keisn1/libft?color=blue" />
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Keisn1/libft?color=brightgreen" />
+[![project-badges](https://github.com/Keisn1/libft/actions/workflows/main.yml/badge.svg)](https://github.com/Keisn1/libft/actions/workflows/main.yml)
+</p>
+#+end_export
+# #+begin_export markdown
+# # # (https://github.com/oakoudad/badge42)
+# # #+end_export
+# # #+begin_export markdown
+# #+end_export
+# https://github.com/Keisn1/libft
 
 * Table of contents :TOC:
 - [[#what-is-libft][What is libft]]
