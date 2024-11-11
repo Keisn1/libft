@@ -1,7 +1,5 @@
 name: Lines of Code
-on:
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   line_counter:
