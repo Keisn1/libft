@@ -33,7 +33,7 @@ size_t				ft_strlen(char const *s);
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dest, void const *src, size_t n);
-void				*ft_memmove(void *dest, const void *src, size_t n);
+void				*ft_memmove(void *dest, void const *src, size_t n);
 size_t				ft_strlcpy(char *dst, char const *src, size_t size);
 size_t				ft_strlcat(char *dst, char const *src, size_t size);
 int					ft_tolower(int c);
