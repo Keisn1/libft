@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char const *s, int c)
 {
 	while (*s)
 	{

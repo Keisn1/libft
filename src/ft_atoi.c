@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(char const *nptr)
 {
 	int	res;
 	int	sign;
