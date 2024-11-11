@@ -6,17 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Run
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Launch the local action
-        uses: ./ # Uses an action in the root directory
+      - name: Make Code Badge
+        uses: shadowmoose/GHA-LoC-Badge@1.0.0
         id: badge
         with:
           debug: true
           directory: ./
           badge: ./output/badge.svg
-          ignore: 'node_modules/|README'
+          patterns: '*.js'  # Patterns in the format of a '.gitignore' file, separated by pipes.
+          ignore: 'node_modules'
 
       - name: Print the output
         run: |
