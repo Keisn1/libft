@@ -12,21 +12,21 @@
 
 #include "libft.h"
 
-static char	*jump_sep(char *str, char sep)
+static const char	*jump_sep(char const *str, char sep)
 {
 	while (*str && *str == sep)
 		str++;
 	return (str);
 }
 
-static char	*jump_non_sep(char *str, char sep)
+static const char	*jump_non_sep(char const *str, char sep)
 {
 	while (*str && (*str != sep))
 		str++;
 	return (str);
 }
 
-static int	count_words(char *str, char c)
+static int	count_words(char const *str, char c)
 {
 	int	count;
 
@@ -48,7 +48,8 @@ static int	count_words(char *str, char c)
 	return (count);
 }
 
-static char	*extract_string(char *str, char *end_word, char **strs, size_t count)
+static char	*extract_string(char const *str, char const *end_word, char **strs,
+		size_t count)
 {
 	size_t	idx;
 
@@ -68,12 +69,12 @@ static char	*extract_string(char *str, char *end_word, char **strs, size_t count
 	return (strs[count]);
 }
 
-char	**ft_split(char *str, char c)
+char	**ft_split(char const *str, char c)
 {
-	char	**strs;
-	char	*end_word;
-	int		nbr_of_words;
-	size_t	count;
+	char		**strs;
+	char const	*end_word;
+	int			nbr_of_words;
+	size_t		count;
 
 	nbr_of_words = count_words(str, c);
 	strs = (char **)malloc((nbr_of_words + 1) * sizeof(char *));

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /*
    Appends src to string dst of size siz (unlike strncat, siz is the
    full size of dst, not space left).  At most siz-1 characters
@@ -19,10 +20,10 @@
    If retval >= siz, truncation occurred.
 */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, char const *src, size_t size)
 {
 	char		*d;
-	const char	*s;
+	char const	*s;
 	size_t		dlen;
 	size_t		n;
 
