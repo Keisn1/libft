@@ -1,20 +1,22 @@
-on: [push]
-name: Run Test
+name: Lines of Code
+on:
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  hello_world_job:
+  line_counter:
     runs-on: ubuntu-latest
-    name: Test Run
+    name: Initialise
     steps:
-      - name: Make Code Badge
+
+      - name: Count The Lines
         uses: shadowmoose/GHA-LoC-Badge@1.0.0
         id: badge
         with:
-          debug: true
+          debug: false
           directory: ./
-          badge: ./output/badge.svg
-          patterns: '*.js'  # Patterns in the format of a '.gitignore' file, separated by pipes.
-          ignore: 'node_modules'
+          badge: .github/cloc.svg
+          ignore: 'node_modules/|README'
 
       - name: Print the output
         run: |
