@@ -2,11 +2,9 @@
 
 <p align="center">
 <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Keisn1/libft?color=blueviolet" />
-<img alt="Number of lines of code" src="https://img.shields.io/lgtm/lines/g/Keisn/libft"/>
-<img alt="Code language count" src="https://img.shields.io/github/languages/count/Keisn1/libft?color=blue" />
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Keisn1/libft?color=blue" />
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Keisn1/libft?color=brightgreen" />
-[![project-badges](https://github.com/Keisn1/libft/actions/workflows/main.yml/badge.svg)](https://github.com/Keisn1/libft/actions/workflows/main.yml)
+<img alt="GitHub Lines of Code" src="https://tokei.rs/b1/github/Keisn1/libft?category=code" />
 </p>
 
 # Table of contents <span class="tag" data-tag-name="TOC"><span class="smallcaps">TOC</span></span>
