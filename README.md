@@ -1,9 +1,5 @@
 ![](cover-libft-bonus.png)
 
-<p align="center">
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Keisn/libft?color=blueviolet" />
-# </p>
-
 # Table of contents <span class="tag" data-tag-name="TOC"><span class="smallcaps">TOC</span></span>
 
   - [What is libft](#what-is-libft)

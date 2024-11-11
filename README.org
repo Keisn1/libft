@@ -2,21 +2,21 @@
 #+macro: libft-cover [[file:cover-libft-bonus.png]]
 #+OPTIONS: ^:nil
 
+
 {{{libft-cover}}}
-#+begin_export markdown
-<p align="center">
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Keisn/libft?color=blueviolet" />
-# </p>
-#+end_export
 # #+begin_export markdown
-# # # [![kfreyer's 42 stats](https://badge.mediaplus.ma/darkblue/kfreyer)](https://github.com/oakoudad/badge42)
-# # #+end_export
-# # #+begin_export markdown
-# # <img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/appinha/42cursus-00-Libft?color=blueviolet" />
-# # <img alt="Code language count" src="https://img.shields.io/github/languages/count/appinha/42cursus-00-Libft?color=blue" />
-# # <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/appinha/42cursus-00-Libft?color=blue" />
-# # <img alt="GitHub last commit" src="https://img.shieklds.io/github/last-commit/appinha/42cursus-00-Libft?color=brightgreen" />
+# # [![kfreyer's 42 stats](https://badge.mediaplus.ma/darkblue/kfreyer)](https://github.com/oakoudad/badge42)
 # #+end_export
+# #+begin_export markdown
+# <p align="center">
+# <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/appinha/42cursus-00-Libft?color=blueviolet" />
+# <img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/appinha/42cursus-00-Libft?color=blueviolet" />
+# <img alt="Code language count" src="https://img.shields.io/github/languages/count/appinha/42cursus-00-Libft?color=blue" />
+# <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/appinha/42cursus-00-Libft?color=blue" />
+# <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/appinha/42cursus-00-Libft?color=brightgreen" />
+# </p>
+# #+end_export
+
 
 * Table of contents :TOC:
 - [[#what-is-libft][What is libft]]
