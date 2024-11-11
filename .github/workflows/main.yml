@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Initialise
     steps:
-
       - name: Count The Lines
         uses: shadowmoose/GHA-LoC-Badge@1.0.0
         id: badge
@@ -22,3 +21,4 @@ jobs:
         run: |
           echo "Scanned: ${{ steps.badge.outputs.counted_files }}";
           echo "Line Count: ${{ steps.badge.outputs.total_lines }}";
+
