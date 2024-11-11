@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfreyer <kfreyer@student.42wolfsburg.      +#+  +:+       +#+        */
+/*   By: kfreyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 17:53:44 by kfreyer           #+#    #+#             */
-/*   Updated: 2024/07/31 21:45:13 by kfreyer          ###   ########.fr       */
+/*   Created: 2024/11/11 12:14/04 by kfreyer           #+#    #+#             */
+/*   Updated: 2024/11/11 12:14:04 by kfreyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*jump_sep(char *str, char sep)
+static char	*jump_sep(char *str, char sep)
 {
 	while (*str && *str == sep)
 		str++;
 	return (str);
 }
 
-char	*jump_non_sep(char *str, char sep)
+static char	*jump_non_sep(char *str, char sep)
 {
 	while (*str && (*str != sep))
 		str++;
 	return (str);
 }
 
-int	count_words(char *str, char c)
+static int	count_words(char *str, char c)
 {
 	int	count;
 
@@ -48,7 +48,7 @@ int	count_words(char *str, char c)
 	return (count);
 }
 
-char	*extract_string(char *str, char *end_word, char **strs, size_t count)
+static char	*extract_string(char *str, char *end_word, char **strs, size_t count)
 {
 	size_t	idx;
 

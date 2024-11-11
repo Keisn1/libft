@@ -24,9 +24,6 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-/* helper */
-int					ft_abs(int x);
-
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isalpha(char c);
