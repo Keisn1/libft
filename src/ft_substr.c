@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_get_empty_str(void)
+static char	*ft_get_empty_str(void)
 {
 	char	*empty_str;
 
