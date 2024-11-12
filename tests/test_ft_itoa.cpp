@@ -1,5 +1,4 @@
-#include <gtest/gtest.h>
-#include "libft.h"
+#include "test_libft.hpp"
 
 struct FtItoaTestParam {
 	int n;

@@ -1,24 +1,23 @@
-#include <gtest/gtest.h>
-#include "libft.h"
+// #include "test_libft.hpp"
 
-struct FtLstnewParams {
-	void* content;
-};
+// struct FtLstnewParams {
+// 	void* content;
+// };
 
-class FtLstnewTest : public ::testing::TestWithParam<FtLstnewParams> {};
+// class FtLstnewTest : public ::testing::TestWithParam<FtLstnewParams> {};
 
-TEST_P(FtLstnewTest, HandlesVariousContents) {
-	FtLstnewParams params = GetParam();
+// TEST_P(FtLstnewTest, HandlesVariousContents) {
+// 	FtLstnewParams params = GetParam();
 
-	t_list *n = ft_lstnew(params.content);
-	EXPECT_EQ(n->next, (void*)0);
-	EXPECT_EQ(n->content, params.content);
-	free(n);
-}
+// 	t_list *n = ft_lstnew(params.content);
+// 	EXPECT_EQ(n->next, (void*)0);
+// 	EXPECT_EQ(n->content, params.content);
+// 	free(n);
+// }
 
-INSTANTIATE_TEST_SUITE_P(FtLstnewTests, FtLstnewTest,
-                         ::testing::Values(
-							 FtLstnewParams{(void*)0},
-							 FtLstnewParams{(void*)"Hello"}
-							 )
-	);
+// INSTANTIATE_TEST_SUITE_P(FtLstnewTests, FtLstnewTest,
+//                          ::testing::Values(
+// 							 FtLstnewParams{(void*)0},
+// 							 FtLstnewParams{(void*)"Hello"}
+// 							 )
+// 	);

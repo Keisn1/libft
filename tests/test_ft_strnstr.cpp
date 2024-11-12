@@ -1,9 +1,4 @@
-#include "gtest/gtest.h"
-#include <cstddef>
-#include <gtest/gtest.h>
-#include "libft.h"
-#include <bsd/string.h>
-
+#include "test_libft.hpp"
 
 TEST(FtStrnstrDeathTest, HandleNullInputs) {
     EXPECT_DEATH(strnstr(NULL, NULL, 0), "");

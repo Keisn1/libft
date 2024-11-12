@@ -1,6 +1,4 @@
-#include <gtest/gtest.h>
-#include <bsd/string.h>
-#include "libft.h"
+#include "test_libft.hpp"
 
 struct FtStrlcatTestParam {
 	const char* dst;

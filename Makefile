@@ -11,7 +11,7 @@ CFLAGS := -Wall -Wextra -Werror
 CFLAGS += -Iincludes
 CXXFLAGS := -Wall -Wextra
 CXXFLAGS += -Iincludes
-LDFLAGS := -Lgtest -lgtest -lgtest_main -pthread
+LDFLAGS := -lgtest -lgtest_main -pthread
 BSD := -lbsd
 
 # Test Flags

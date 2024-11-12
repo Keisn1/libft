@@ -1,9 +1,4 @@
-#include <fcntl.h>
-#include <gtest/gtest.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <limits.h>
-#include "libft.h"
+#include "test_libft.hpp"
 
 struct FtPutnbrfdTestParam {
 	int nbr;

@@ -1,7 +1,4 @@
-#include <string.h>
-#include <bsd/string.h>
-#include <gtest/gtest.h>
-#include "libft.h"
+#include "test_libft.hpp"
 
 struct FtMemmoveTestParam {
 	size_t offset_dest;

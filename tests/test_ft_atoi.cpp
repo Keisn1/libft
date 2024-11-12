@@ -1,5 +1,4 @@
-#include "libft.h"
-#include <gtest/gtest.h>
+#include "test_libft.hpp"
 
 TEST(FtAtoiTest, ErrorInputs) {
     EXPECT_EQ(ft_atoi("-"), atoi("-"));

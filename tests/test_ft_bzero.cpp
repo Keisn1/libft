@@ -1,6 +1,4 @@
-#include <stddef.h>
-#include <gtest/gtest.h>
-#include "libft.h"
+#include "test_libft.hpp"
 
 struct FtBzeroTestParam {
 	size_t size;

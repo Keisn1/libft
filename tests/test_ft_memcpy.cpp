@@ -1,6 +1,4 @@
-#include <string.h>
-#include <gtest/gtest.h>
-#include "libft.h"
+#include "test_libft.hpp"
 
 struct FtMemcpyTestParam {
 	const void* src;

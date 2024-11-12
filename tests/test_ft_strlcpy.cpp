@@ -1,6 +1,4 @@
-#include "libft.h"
-#include <gtest/gtest.h>
-#include <bsd/string.h>
+#include "test_libft.hpp"
 
 struct FtStrlcpyTestParam {
 	const char* src;

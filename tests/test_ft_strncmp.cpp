@@ -1,6 +1,5 @@
-#include <gtest/gtest.h>
-#include <string.h>
-#include <libft.h>
+#include "test_libft.hpp"
+
 
 struct FtStrncmpTestParams {
 	const char *s1;
