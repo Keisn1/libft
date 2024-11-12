@@ -73,14 +73,15 @@ $(TEST_TARGET)-FSANITIZE: $(OBJ_FILES) $(TEST_OBJ_FILES) $(OBJ_FILES_BONUS)
 
 ############ PHONY ##################
 clean:
-	rm -f $(OBJ_FILES) $(TEST_OBJ_FILES)
+	rm -f $(OBJ_FILES) $(OBJ_FILES_BONUS) $(TEST_OBJ_FILES)
+	rm -rf build
 
 fclean: clean
 	rm -f $(BIN_DIR)/*
 
 re: fclean all
 
-bear: $(OBJ_FILES) $(TEST_OBJ_FILES)
+bear: $(OBJ_FILES)  $(TEST_OBJ_FILES)
 
 test-fsanitize: $(TEST_TARGET)-FSANITIZE
 	- $(TEST_TARGET)-FSANITIZE

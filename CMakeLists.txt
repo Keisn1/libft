@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(libft)
+project(libft LANGUAGES C CXX)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -32,18 +32,11 @@ target_include_directories(${TEST_NAME} PRIVATE ${gtest_SOURCE_DIR}/googletest/i
 
 target_link_libraries(
   ${TEST_NAME}
-  GTest::gtest
+  # GTest::gtest
   GTest::gtest_main
   pthread
   bsd
 )
-
-
-# find_package(PkgConfig REQUIRED)
-# pkg_check_modules(LIBBSD REQUIRED libbsd)
-
-# # Link the library to your target
-# target_link_libraries(${TEST_NAME} ${LIBBSD_LIBRARIES})
 
 # Register the test with CTest
 include(GoogleTest)
