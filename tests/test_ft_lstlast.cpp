@@ -1,63 +1,40 @@
-// #include "test_libft.hpp"
+#include "test_libft.hpp"
+
+struct FtLstlastParams {
+	std::vector<int> lst_entries;
+};
 
 
-// t_list *create_list_last_element_eq_length(int length) {
-// 	if (length <= 0) {
-// 		return NULL;
-// 	}
-// 	t_list *lst = new t_list{.content = (void*)1, .next = nullptr};
-// 	t_list *head = lst;
-// 	while (length > 1) {
-// 		head->next = new t_list{.content = (void*)1, .next = nullptr};
-// 		head = head->next;
-// 		length--;
-// 	}
+class FtLstlastTest : public testing::TestWithParam<FtLstlastParams> {};
 
-// 	const char* last = "last";
-// 	head->content = (void*)last;
-// 	return lst;
-// }
+TEST_P(FtLstlastTest, HandleVariousInputs) {
+	FtLstlastParams params = GetParam();
 
-// void clear_list_3(t_list *lst) {
-//     while (lst) {
-//         t_list *tmp = lst;
-//         lst = lst->next;
-// 		delete tmp;
-// 	}
-// }
+	std::vector<int> lst_entries = params.lst_entries;
+	t_list* lst = NULL;
+	for (int i = 0; i < lst_entries.size() ; i++ ) {
+		ft_lstadd_back(&lst, ft_lstnew(&lst_entries[i]));
+    }
 
-// struct FtLstlastParams {
-// 	t_list* lst;
-// };
+	if (lst_entries.size()) {
+		EXPECT_EQ(lst_entries[lst_entries.size() - 1], *(int*)ft_lstlast(lst)->content);
+	} else {
+		EXPECT_EQ(nullptr, ft_lstlast(lst));
+	}
 
+	t_list* head = lst;
+	while (head) {
+		lst = head;
+		head = head->next;
+		free(lst);
+	}
+}
 
-// class FtLstlastTest : public testing::TestWithParam<FtLstlastParams> {
-// public:
-// 	~FtLstlastTest() {
-// 		FtLstlastParams params = GetParam();
-// 		clear_list_3(params.lst);
-// 	}
-// };
-
-
-// TEST_P(FtLstlastTest, HandleVariousInputs) {
-// 	FtLstlastParams params = GetParam();
-// 	t_list *lst = params.lst;
-// 	t_list *got = ft_lstlast(lst);
-// 	if (lst) {
-// 		EXPECT_STREQ((char*)(got->content), "last");
-// 	} else {
-// 		EXPECT_EQ(got, nullptr);
-// 	}
-// }
-
-// INSTANTIATE_TEST_SUITE_P(
-//     FtLstlastTests,
-// 	FtLstlastTest,
-// 	::testing::Values(
-// 		FtLstlastParams{create_list_last_element_eq_length(0)},
-// 		FtLstlastParams{create_list_last_element_eq_length(1)},
-// 		FtLstlastParams{create_list_last_element_eq_length(5)},
-// 		FtLstlastParams{create_list_last_element_eq_length(3)}
-// 		)
-// 	);
+INSTANTIATE_TEST_SUITE_P(
+    FtLstlastTests,
+	FtLstlastTest,
+	::testing::Values(
+		FtLstlastParams{{1, 2, 3}},
+		FtLstlastParams{{}}
+		)
+	);

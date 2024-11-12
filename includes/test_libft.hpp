@@ -9,5 +9,6 @@ extern "C" {
 #include <cstdio>
 #include <string.h>
 #include <bsd/string.h>
+#include <vector>
 
 #endif // TEST_LIBFT_H

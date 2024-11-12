@@ -1,4 +1,4 @@
-// #include "test_libft.hpp"
+#include "test_libft.hpp"
 
 
 // t_list *create_list(int length) {
@@ -23,35 +23,42 @@
 // 	}
 // }
 
-// struct FtLstsizeParams {
-// 	t_list* lst;
-//     int want;
-// };
+struct FtLstsizeParams {
+	std::vector<int> lst_entries;
+	int want;
+};
 
 
-// class FtLstsizeTest : public testing::TestWithParam<FtLstsizeParams> {
-// public:
-// 	~FtLstsizeTest() {
-// 		FtLstsizeParams params = GetParam();
-// 		clear_list(params.lst);
-// 	}
-// };
+class FtLstsizeTest : public testing::TestWithParam<FtLstsizeParams> {};
 
 
-// TEST_P(FtLstsizeTest, HandleVariousInputs) {
-// 	FtLstsizeParams params = GetParam();
-// 	t_list *lst = params.lst;
-// 	int got = ft_lstsize(lst);
-// 	EXPECT_EQ(got, params.want);
-// }
+TEST_P(FtLstsizeTest, HandleVariousInputs) {
+	FtLstsizeParams params = GetParam();
 
-// INSTANTIATE_TEST_SUITE_P(
-//     FtLstsizeTests,
-// 	FtLstsizeTest,
-// 	::testing::Values(
-// 		FtLstsizeParams{create_list(10), 10},
-// 		FtLstsizeParams{create_list(1), 1},
-// 		FtLstsizeParams{create_list(0), 0},
-// 		FtLstsizeParams{create_list(3), 3}
-// 		)
-// 	);
+	std::vector<int> lst_entries = params.lst_entries;
+
+	t_list* lst = NULL;
+	for (int i = 0; i < lst_entries.size() ; i++ ) {
+		ft_lstadd_back(&lst, ft_lstnew(&lst_entries[i]));
+    }
+
+	int got = ft_lstsize(lst);
+	EXPECT_EQ(got, params.want);
+
+	t_list* head = lst;
+	while (head) {
+		lst = head;
+		head = head->next;
+		free(lst);
+	}
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    FtLstsizeTests,
+	FtLstsizeTest,
+	::testing::Values(
+		FtLstsizeParams{{}, 0},
+		FtLstsizeParams{{1, 2, 3}, 3},
+		FtLstsizeParams{{1, 2, 3, 4, 5}, 5}
+		)
+	);

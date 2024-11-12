@@ -84,6 +84,10 @@ bear: $(OBJ_FILES) $(TEST_OBJ_FILES)
 
 test-fsanitize: $(TEST_TARGET)-FSANITIZE
 	- $(TEST_TARGET)-FSANITIZE
+test:
+	- cmake -S . -B build
+	- cmake --build build
+	- cd build && ctest -V
 
 norminette:
 	norminette -R CheckForbiddenSourceHeader -R CheckDefine src
