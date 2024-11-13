@@ -11,7 +11,6 @@ CFLAGS := -Wall -Wextra -Werror
 
 #Directories and extensions
 BIN_DIR := ./bin
-TESTS_DIR := ./tests
 
 #Source files
 SRC_FILES := ft_atoi.c \
@@ -59,8 +58,50 @@ BONUS_SRC_FILES := ft_lstadd_back.c \
 	ft_lstnew.c \
 	ft_lstsize.c \
 
-OBJ_FILES := $(SRC_FILES:%.c=%.o)
-BONUS_OBJ_FILES := $(BONUS_SRC_FILES:%.c=%.o)
+OBJ_FILES := ft_atoi.o \
+  ft_bzero.o \
+  ft_calloc.o \
+  ft_isalnum.o \
+  ft_isalpha.o \
+  ft_isascii.o \
+  ft_isdigit.o \
+  ft_isprint.o \
+  ft_itoa.o \
+  ft_memchr.o \
+  ft_memcmp.o \
+  ft_memcpy.o \
+  ft_memmove.o \
+  ft_memset.o \
+  ft_putchar_fd.o \
+  ft_putendl_fd.o \
+  ft_putnbr_fd.o \
+  ft_putstr_fd.o \
+  ft_split.o \
+  ft_strchr.o \
+  ft_strdup.o \
+  ft_striteri.o \
+  ft_strjoin.o \
+  ft_strlcat.o \
+  ft_strlcpy.o \
+  ft_strlen.o \
+  ft_strmapi.o \
+  ft_strncmp.o \
+  ft_strnstr.o \
+  ft_strrchr.o \
+  ft_strtrim.o \
+  ft_substr.o \
+  ft_tolower.o \
+  ft_toupper.o
+
+BONUS_OBJ_FILES := ft_lstadd_back.o \
+	ft_lstadd_front.o \
+	ft_lstclear.o \
+	ft_lstdelone.o \
+	ft_lstiter.o \
+	ft_lstlast.o \
+	ft_lstmap.o \
+	ft_lstnew.o \
+	ft_lstsize.o \
 
 #Library name
 NAME := libft.a
@@ -84,7 +125,7 @@ $%.o: %.c
 
 ############ PHONY ##################
 clean:
-	rm -f $(OBJ_FILES) $(TEST_OBJ_FILES)
+	rm -f $(OBJ_FILES) $(BONUS_OBJ_FILES)
 
 fclean: clean
 	rm -f $(NAME)
@@ -96,7 +137,7 @@ norminette:
 
 ############ PRINTING ##################
 #Phony targets
-.PHONY: all bonus clean fclean re bear test-fsanitize norminette print_bonus_objs print_srcs print_objs print_bonus_srcs
+.PHONY: all bonus clean fclean re bear  norminette print_bonus_objs print_srcs print_objs print_bonus_srcs
 
 #Printing
 print_srcs:
@@ -111,12 +152,4 @@ print_bonus_srcs:
 print_bonus_objs:
 	@echo $(BONUS_OBJ_FILES)
 
-print_test_files:
-	@echo $(TEST_FILES)
-
-print_test_objs:
-	@echo $(TEST_OBJ_FILES)
-
-print_test_target:
-	@echo $(TEST_TARGET)
 #end
