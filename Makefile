@@ -23,6 +23,7 @@ SRC_DIR_BONUS = ./src_bonus
 
 OBJ_DIR := ./obj
 BIN_DIR := ./bin
+BUILD_DIR := ./build
 TESTS_DIR := ./tests
 
 #Source files
@@ -74,10 +75,12 @@ $(TEST_TARGET)-FSANITIZE: $(OBJ_FILES) $(TEST_OBJ_FILES) $(OBJ_FILES_BONUS)
 ############ PHONY ##################
 clean:
 	rm -f $(OBJ_FILES) $(OBJ_FILES_BONUS) $(TEST_OBJ_FILES)
-	rm -rf build
 
 fclean: clean
 	rm -f $(BIN_DIR)/*
+	rm -rf $(BIN_DIR)
+	rm -rf $(OBJ_DIR)
+	rm -rf $(BUILD_DIR)
 
 re: fclean all
 

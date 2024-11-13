@@ -13,6 +13,9 @@
 <img alt="GitHub Lines of Code" src="https://tokei.rs/b1/github/Keisn1/libft?category=code" />
 </p>
 #+end_export
+
+
+[![42 Project Score](https://42-project-badge.glitch.me/users/kfreyer/project/libft)](https://github.com/ricardoreves/42-project-badge)
 # #+begin_export markdown
 # # # (https://github.com/oakoudad/badge42)
 # # #+end_export
