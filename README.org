@@ -1,0 +1,87 @@
+#+title: Libft
+#+macro: libft-cover [[file:cover-libft-bonus.png]]
+#+OPTIONS: ^:nil
+
+
+{{{libft-cover}}}
+
+#+begin_export markdown
+<p align="center">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Keisn1/libft?color=blueviolet" />
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Keisn1/libft?color=blue" />
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Keisn1/libft?color=brightgreen" />
+<img alt="GitHub Lines of Code" src="https://tokei.rs/b1/github/Keisn1/libft?category=code" />
+[![42 Project Score](https://42-project-badge.glitch.me/users/kfreyer/project/libft)](https://github.com/ricardoreves/42-project-badge)
+</p>
+#+end_export
+# #+begin_export markdown
+# # # (https://github.com/oakoudad/badge42)
+# # #+end_export
+# # #+begin_export markdown
+# #+end_export
+# https://github.com/Keisn1/libft
+
+* Table of contents :TOC:
+- [[#what-is-libft][What is libft]]
+- [[#makefile-and-googletests][Makefile and GoogleTests]]
+- [[#mandatory-part][Mandatory part]]
+- [[#references][References]]
+  - [[#testdrivenio][TestDriven.io]]
+  - [[#learn-go-with-tests][Learn go with tests]]
+  - [[#from-nand-to-tetris-in-go][From Nand to Tetris in Go]]
+
+* What is libft
+=Libft= is the continuiation of what students learned in their [[https://github.com/Keisn1/C-piscine-42][42piscine]], the initial qualification phase for the school.
+
+=Libft= is a project where students build their very first C library. The students learn more about the infrastructure and organization of C. They learn about *static libraries*, what they are, how they are compiled, and how others can use them. Furthermore, the students gain hands-on experience with Makefiles in order to build their library.
+
+The library itself is a collection of functionality mostly focused on input/output operations, but it also includes memory manipulation and an implementation of a =linked list=. Throughout the course, it will serve as a replacement for =stdio=, and the students are required to use it and expand it for further use ([[https://github.com/Keisn1/ft_printf][ft_printf]], [[https://github.com/Keisn1/get-next-line][get-next-line]]).
+
+Moreover, the students are exposed to extensive testing and are required to test their code at a very early stage. In that sense, it is just a continuation of what they were already exposed to during the piscine. The moulinette is a very meticulous program that every student needs to submit their code to. This teaches the students to be extremely rigorous and attentive to detail at a very early stage.
+
+The most important aspect of =libft= is that it is the first project at the school. Students get to know their peers and will perform peer evaluations from day one. This exposure to other people's code and discussions about code and ideas is what makes the school special. They learn to discuss their code so that others can understand them, forcing them to think about the other' perpective. They learn to formulate their ideas concisely and comprehensibly from the first day. Moreover, they develop the habit to ask their peers for help if they are not able to advance by themselves, which in turn teaches everybody to teach code and make it understandable.
+
+* Makefile and GoogleTests
+During this project, I've begun to familiarize myself with GoogleTest.
+It is essential for 42 students to test their code, and since I really like Test Driven Development methodologies, I was eager to get to know and use a testing framework for =C/C++=.
+I've already gained a lot of experience in Test Driven Development through courses and books ([[#testdrivenio][TestDriven.io]], [[#learn-go-with-tests][Learn go with tests]]) and personal projects ([[#from-nand-to-tetris-in-go][From Nand to Tetris in Go]]).
+In fact, I think that completing the 42 cursus is a perfect opportunity to become proficient with a testing framework and at testing in general.
+* Mandatory part
+
+|--------------------+----------------------------------------------------------------------------------------------|
+| *Program name*       | libft.a                                                                                      |
+|--------------------+----------------------------------------------------------------------------------------------|
+| Turn in files      | Makefile, libft.h, ft_*.c                                                                    |
+|--------------------+----------------------------------------------------------------------------------------------|
+| Makefile           | _NAME_, all, clean, fclean, re                                                                 |
+|--------------------+----------------------------------------------------------------------------------------------|
+| External Functions | write, malloc, free                                                                          |
+|--------------------+----------------------------------------------------------------------------------------------|
+| Description        | Write your own library: a collection of functions that will be a useful tool for your cursus |
+|--------------------+----------------------------------------------------------------------------------------------|
+| Library            |                                                                                              |
+|--------------------+----------------------------------------------------------------------------------------------|
+| stdlib             | ft_isalpha, ft_isdigit, ft_isalnum,  ft_isascii,  ft_isprint,  ft_toupper,                   |
+|                    | ft_tolower, ft_itoa, ft_atoi                                                                 |
+|--------------------+----------------------------------------------------------------------------------------------|
+| string             | ft_strlen,  ft_strlcpy,  ft_strlcat,  ft_strncmp,  ft_strnstr                                |
+|                    | ft_strchr, ft_strrchr, ft_bzero                                                              |
+|                    | ft_memset,  ft_memchr,  ft_memcpy,  ft_memcmp,  ft_memmove                                   |
+|                    | ft_substr, ft_strjoin, ft_strtrim, ft_strmapi, ft_striteri, ft_split                         |
+|--------------------+----------------------------------------------------------------------------------------------|
+| stdio              | ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd                                     |
+|--------------------+----------------------------------------------------------------------------------------------|
+| list               | ft_lstnew,  ft_lstadd_front,  ft_lstsize,  ft_lstlast                                        |
+|                    | ft_lstadd_back,  ft_lstdelone,  ft_lstclear,  ft_lstiter,  ft_lstmap                         |
+
+
+* References
+** TestDriven.io
+- [[https://testdriven.io/courses/python-web-framework/][Building Your Own Python Web Framework]]
+- [[https://testdriven.io/courses/tdd-django/][Test-Driven Development with Django, Django REST Framework, and Docker]]
+- [[https://testdriven.io/courses/taxi-react/][Developing a Real-Time Taxi App with Django Channels and React]]
+- [[https://testdriven.io/courses/http-load-balancer/][Creating an HTTP Load Balancer in Python]]
+** Learn go with tests
+[[https://quii.gitbook.io/learn-go-with-tests][Learn go with tests]]
+** From Nand to Tetris in Go
+[[https://github.com/Keisn1/nand-to-tetris-in-go][nand-to-tetris-in-go]]
