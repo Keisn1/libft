@@ -7,9 +7,6 @@
 <img alt="GitHub Lines of Code" src="https://tokei.rs/b1/github/Keisn1/libft?category=code" />
 </p>
 
-\[\!\[42 Project
-Score\](<https://42-project-badge.glitch.me/users/kfreyer/project/libft>)\](<https://github.com/ricardoreves/42-project-badge>)
-
 # Table of contents <span class="tag" data-tag-name="TOC"><span class="smallcaps">TOC</span></span>
 
   - [What is libft](#what-is-libft)
