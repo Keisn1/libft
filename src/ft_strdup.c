@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfreyer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kfreyer <kfreyer@student.42wolfsburg.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 12:13/52 by kfreyer           #+#    #+#             */
-/*   Updated: 2024/11/11 12:13:52 by kfreyer          ###   ########.fr       */
+/*   Created: 2024/07/16 13:47:26 by kfreyer           #+#    #+#             */
+/*   Updated: 2024/07/31 14:40:22 by kfreyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char const *s)
+char	*ft_strdup(const char *s)
 {
 	char	*res_o;
 	char	*res;

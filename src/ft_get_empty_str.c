@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_get_empty_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfreyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 18:07/50 by kfreyer           #+#    #+#             */
-/*   Updated: 2024/08/20 18:07:50 by kfreyer          ###   ########.fr       */
+/*   Created: 2024/09/05 20:11/36 by kfreyer           #+#    #+#             */
+/*   Updated: 2024/09/05 20:11:36 by kfreyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+char	*ft_get_empty_str(size_t n)
 {
-	t_list	*new;
+	char	*ret;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
+	ret = (char *)malloc(n);
+	if (ret == NULL)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	*ret = '\0';
+	return (ret);
 }

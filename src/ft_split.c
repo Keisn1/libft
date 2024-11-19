@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfreyer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kfreyer <kfreyer@student.42wolfsburg.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 12:14/04 by kfreyer           #+#    #+#             */
-/*   Updated: 2024/11/11 12:14:04 by kfreyer          ###   ########.fr       */
+/*   Created: 2024/07/17 17:53:44 by kfreyer           #+#    #+#             */
+/*   Updated: 2024/07/31 21:45:13 by kfreyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static const char	*jump_sep(char const *str, char sep)
+char	*jump_sep(char *str, char sep)
 {
 	while (*str && *str == sep)
 		str++;
 	return (str);
 }
 
-static const char	*jump_non_sep(char const *str, char sep)
+char	*jump_non_sep(char *str, char sep)
 {
 	while (*str && (*str != sep))
 		str++;
 	return (str);
 }
 
-static int	count_words(char const *str, char c)
+int	count_words(char *str, char c)
 {
 	int	count;
 
@@ -48,8 +48,7 @@ static int	count_words(char const *str, char c)
 	return (count);
 }
 
-static char	*extract_string(char const *str, char const *end_word, char **strs,
-		size_t count)
+char	*extract_string(char *str, char *end_word, char **strs, size_t count)
 {
 	size_t	idx;
 
@@ -69,12 +68,12 @@ static char	*extract_string(char const *str, char const *end_word, char **strs,
 	return (strs[count]);
 }
 
-char	**ft_split(char const *str, char c)
+char	**ft_split(char *str, char c)
 {
-	char		**strs;
-	char const	*end_word;
-	int			nbr_of_words;
-	size_t		count;
+	char	**strs;
+	char	*end_word;
+	int		nbr_of_words;
+	size_t	count;
 
 	nbr_of_words = count_words(str, c);
 	strs = (char **)malloc((nbr_of_words + 1) * sizeof(char *));

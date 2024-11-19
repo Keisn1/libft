@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_chr_in_set(char const *set, char c)
+int	ft_chr_in_set(char const *set, char c)
 {
 	while (*set)
 	{
@@ -23,25 +23,14 @@ static int	ft_chr_in_set(char const *set, char c)
 	return (0);
 }
 
-static char	*ft_get_empty_str(void)
-{
-	char	*empty_str;
-
-	empty_str = (char *)malloc(sizeof(char));
-	if (!empty_str)
-		return (NULL);
-	*empty_str = '\0';
-	return (empty_str);
-}
-
-static char const	*find_start(char const *s1, char const *set)
+const char	*find_start(char const *s1, char const *set)
 {
 	while (ft_chr_in_set(set, *s1))
 		s1++;
 	return (s1);
 }
 
-static char const	*find_end(char const *s1, char const *set)
+const char	*find_end(char const *s1, char const *set)
 {
 	while (ft_chr_in_set(set, *s1))
 		s1--;
@@ -58,10 +47,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	len_s1 = ft_strlen(s1);
 	if (!len_s1)
-		return (ft_get_empty_str());
+		return (ft_get_empty_str(1));
 	start = find_start(s1, set);
 	if (!*start)
-		return (ft_get_empty_str());
+		return (ft_get_empty_str(1));
 	end = find_end(s1 + (len_s1 - 1), set);
 	end++;
 	res_o = (char *)malloc((end - start + 1) * sizeof(char));

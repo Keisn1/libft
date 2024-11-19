@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_jump_digits.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfreyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 18:07/50 by kfreyer           #+#    #+#             */
-/*   Updated: 2024/08/20 18:07:50 by kfreyer          ###   ########.fr       */
+/*   Created: 2024/09/06 19:51/06 by kfreyer           #+#    #+#             */
+/*   Updated: 2024/09/06 19:51:06 by kfreyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+const char	*ft_jump_digits(const char *p)
 {
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	while (ft_isdigit(*p))
+		p++;
+	return (p);
 }

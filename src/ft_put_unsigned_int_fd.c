@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_put_unsigned_int_fd.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfreyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 18:07/50 by kfreyer           #+#    #+#             */
-/*   Updated: 2024/08/20 18:07:50 by kfreyer          ###   ########.fr       */
+/*   Created: 2024/09/03 16:26/44 by kfreyer           #+#    #+#             */
+/*   Updated: 2024/09/03 16:26:44 by kfreyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_put_unsigned_int_fd(unsigned int nb, int fd)
 {
-	t_list	*new;
+	int	arr[10];
+	int	idx;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	idx = 0;
+	arr[idx++] = ft_abs(nb % 10);
+	nb = ft_abs(nb / 10);
+	while (nb > 0)
+	{
+		arr[idx++] = nb % 10;
+		nb /= 10;
+	}
+	while (--idx >= 0)
+		ft_putchar_fd(arr[idx] + '0', fd);
 }

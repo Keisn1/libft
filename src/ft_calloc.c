@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	int_overflow(size_t nmemb, size_t size)
 {

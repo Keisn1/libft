@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	get_length(int n)
+int	get_length(int n)
 {
 	int	count;
 
@@ -25,7 +25,7 @@ static int	get_length(int n)
 	return (count);
 }
 
-static void	ft_rev_char_tab(char *tab, int size)
+void	ft_rev_char_tab(char *tab, int size)
 {
 	char	tmp;
 	int		count;
@@ -40,18 +40,11 @@ static void	ft_rev_char_tab(char *tab, int size)
 	}
 }
 
-static int	is_sign(int n)
+int	is_sign(int n)
 {
 	if (n < 0)
 		return (1);
 	return (0);
-}
-
-static int	ft_abs(int x)
-{
-	if (x < 0)
-		return (-x);
-	return (x);
 }
 
 char	*ft_itoa(int n)
