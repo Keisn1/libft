@@ -70,10 +70,10 @@ void				ft_put_unsigned_int_fd(unsigned int nb, int fd);
 char				*ft_strdup(const char *s);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_itoa(int n);
-char				*ft_strtrim(char const *s1, char const *set);
-char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*ft_strtrim(const char *s1, const char *set);
+char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
-char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin(const char *s1, const char *s2);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /* bonus */
