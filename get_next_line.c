@@ -66,11 +66,13 @@ char	*truncate_stash(int fd)
 	return (cur_stash);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, bool unset)
 {
 	char		*buffer;
 	long int	bytes_read;
 
+	if (unset)
+		return (crud_stash(DELETE_STASH, NULL, fd));
 	buffer = (char *)malloc(BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);

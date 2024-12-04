@@ -104,6 +104,6 @@ typedef enum _OP
 	DELETE_STASH
 }					t_op;
 
-char				*get_next_line(int fd);
+char				*get_next_line(int fd, bool unset);
 
 #endif
